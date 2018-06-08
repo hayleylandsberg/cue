@@ -1,0 +1,27 @@
+.profileMenu {
+    display: none;
+    top: 58px;
+    right: 1px;
+    padding: 8px;
+    position: absolute;
+    width: 250px;
+    border: 1px #f5f5f5 solid;
+    font-size: 1em;
+    background-color: white;
+    z-index: 5;
+}
+
+.navbar .form-control {
+    padding: .75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+}
+
+.white {
+    background-color: white;
+}
+
+#searchTerms {
+    border: 1px solid #979797;
+    border-radius: 5px;
+}

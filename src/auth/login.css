@@ -1,0 +1,46 @@
+body {
+    font-family: avenir;
+    background-image: url("../images/scooter.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 430px;
+    padding: 15px;
+    margin: 120px auto;
+    display: flexbox;
+    justify-content: space-between;
+    margin-right: 100px;
+    color: white;
+    font-family: avenir;
+    text-align: right;
+}
+
+.form-control {
+    margin: 5px 0;
+}
+
+.btn-gray {
+    background-color: #979797;
+    opacity: 0.8;
+}
+
+.flexForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#firstFormDiv {
+    margin-right: 10px;
+}
+
+#mainSignUp {
+    margin-top: 10px;
+}
+
+.h1-large {
+    font-size: 3.15em;
+}

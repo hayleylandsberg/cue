@@ -7,7 +7,7 @@ export default class PostList extends Component {
     render() {
         return (
             <div className="postList">
-                <h1 className="postList__header">Stories</h1>
+                <h1 className="postList__header">Diary Entries</h1>
                 {
                     this.props.posts.map(p => <Post key={p.id} post={p} />)
                 }

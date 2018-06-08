@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import "./Home.css"
 import PostList from "./PostList";
-import AdList from "../ads/AdList";
+import MedicationList from "../medication/MedicationList";
 import FriendList from "../friends/FriendList";
 
 export default class Home extends Component {
@@ -62,14 +62,14 @@ export default class Home extends Component {
                                               className="form-control"
                                               rows="4"></textarea>
                                 </div>
-                                <button type="button" onClick={this.postMessage} className="btn btn-info btn-lg">Post</button>
+                                <button type="button" onClick={this.postMessage} className="btn btn-info btn-lg">Log</button>
                             </form>
 
                             <PostList posts={this.state.posts} activeUser={this.props.activeUser} />
                         </div>
                     </div>
                     <div className="col col-sm-3">
-                        <AdList />
+                        <MedicationList />
                     </div>
                 </div>
             </div>

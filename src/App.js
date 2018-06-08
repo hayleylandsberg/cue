@@ -9,6 +9,7 @@ import Profile from "./user/Profile"
 import Register from "./auth/Register"
 import RegModal from "./auth/RegModal"
 
+
 class App extends Component {
 
     // Set initial state

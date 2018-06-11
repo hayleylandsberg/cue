@@ -1,302 +1,98 @@
 {
   "users": [
     {
-      "email": "steve@stevebrownlee.com",
+      "email": "hayleyheath@gmail.com",
       "password": "me",
-      "firstName": "Steve",
-      "lastName": "Brownlee",
-      "city": "Spring Hill",
-      "state": "TN",
+      "firstName": "Hayley",
+      "lastName": "Landsberg",
+      "city": "Nashville",
+      "state": "Tennessee",
+      "age": "28",
+      "conditions": "test-condition",
+      "allergies": "test-allergy",
+      "pharmacyName": "1937 Kimbark Drive",
+      "pharmacyNumber": "6154746473",
+      "emergencyName": "Anthony Landsberg",
+      "emergencyNumber": "3103394554",
       "id": 1
     },
     {
-      "email": "joe@shepherd.com",
+      "email": "anthonyjlandsberg@gmail.com",
       "password": "me",
-      "firstName": "Joe",
-      "lastName": "Shepherd",
-      "city": "Nashville",
-      "state": "TN",
-      "id": 2
-    },
-    {
-      "email": "jisie@david.com",
-      "password": "me",
-      "firstName": "Jisie",
-      "lastName": "David",
-      "city": "Nashville",
-      "state": "TN",
-      "id": 3
-    },
-    {
-      "email": "meg@ducharme.com",
-      "password": "me",
-      "firstName": "Meg",
-      "lastName": "Ducharme",
-      "city": "Nashville",
-      "state": "TN",
-      "id": 4
-    },
-    {
-      "email": "me@LeviSchubert.com",
-      "password": "none",
-      "firstName": "Levi",
-      "lastName": "Schubert",
-      "city": "Spring Hill",
-      "state": "TN",
-      "id": 5
-    },
-    {
-      "email": "hayley@landsberg.com",
-      "password": "none",
-      "firstName": "Hayley",
+      "firstName": "Anthony",
       "lastName": "Landsberg",
       "city": "Nashville",
       "state": "TN",
-      "id": 6
-    },
-    {
-      "email": "matt@kelly.com",
-      "password": "none",
-      "firstName": "Matt",
-      "lastName": "Kelly",
-      "city": "Nashville",
-      "state": "TN",
-      "id": 7
-    },
-    {
-      "email": "daniel@beecroft.com",
-      "password": "none",
-      "firstName": "Daniel",
-      "lastName": "Beecroft",
-      "city": "Nashville",
-      "state": "TN",
-      "id": 8
-    },
-    {
-      "email": "john@mccoy.com",
-      "password": "none",
-      "firstName": "John",
-      "lastName": "McCoy",
-      "city": "Brentwood",
-      "state": "TN",
-      "id": 9
-    },
-    {
-      "email": "dave@part.com",
-      "password": "none",
-      "firstName": "Dave",
-      "lastName": "Part",
-      "city": "Houghton",
-      "state": "MI",
-      "id": 10
-    },
-    {
-      "email": "hayley@test.com",
-      "password": "me",
-      "firstName": "Hayley",
-      "lastName": "Landsberg",
-      "city": "Nashville",
-      "state": "TN",
-      "id": 11
-    },
-    {
-      "email": "roger@test.com",
-      "password": "me",
-      "firstName": "Roger",
-      "lastName": "Simons",
-      "city": "Nashville",
-      "state": "TN",
-      "id": 12
-    },
-    {
-      "email": "george@test.com",
-      "password": "me",
-      "firstName": "George",
-      "lastName": "Glass",
-      "city": "Franklin",
-      "state": "TN",
-      "age": "43",
-      "conditions": "Test, Test",
-      "id": 13
-    },
-    {
-      "email": "test@test.com",
-      "password": "me",
-      "firstName": "Test",
-      "lastName": "Test",
-      "city": "Nashville",
-      "state": "TN",
-      "age": "56",
-      "conditions": "Test",
-      "allergies": "Test",
+      "age": "30",
+      "conditions": "High Blood Pressue",
+      "allergies": "Bees",
       "pharmacyName": "CVS",
-      "pharmacyNumber": "3938282282",
-      "emergencyName": "Time",
-      "emergencyNumber": "390239203",
-      "id": 14
-    },
-    {
-      "email": "",
-      "password": "",
-      "firstName": "",
-      "lastName": "",
-      "city": "",
-      "state": "",
-      "age": "",
-      "conditions": "",
-      "allergies": "",
-      "pharmacyName": "",
-      "pharmacyNumber": "",
-      "emergencyName": "",
-      "emergencyNumber": "",
-      "id": 15
+      "pharmacyNumber": "6154746473",
+      "emergencyName": "Hayley Landsberg",
+      "emergencyNumber": "3108823105",
+      "id": 2
     }
   ],
-  "friends": [
-    {
-      "id": 1,
-      "requestingFriendId": 1,
-      "acceptedFriendId": 4
-    },
-    {
-      "id": 1,
-      "requestingFriendId": 1,
-      "acceptedFriendId": 3
-    },
-    {
-      "id": 1,
-      "requestingFriendId": 1,
-      "acceptedFriendId": 2
-    }
-  ],
+  "friends": [],
   "posts": [
     {
-      "message": "First attempt",
-      "userId": "1",
+      "message": "This morning I have felt light headed and have had a lot of right ear pain.",
+      "userId": 1,
+      "date": "06/11/2018, 11:05:17 AM",
       "id": 1
     },
     {
-      "message": "Got the basic version working tonight after a couple hours playing around with different options for component relationships",
-      "userId": 1,
+      "message": "Today was a good day for me. I felt energized and no pain.",
+      "userId": "2",
+      "date": "06/11/2018, 1:16:17 PM",
       "id": 2
-    },
-    {
-      "message": "What??",
-      "userId": "1",
-      "id": 3
-    },
-    {
-      "message": "Hi, I'm steve",
-      "userId": "1",
-      "id": 4
-    },
-    {
-      "message": "Different relationships around version couple basic",
-      "userId": "1",
-      "id": 5
-    },
-    {
-      "message": "123",
-      "userId": "1",
-      "id": 6
-    },
-    {
-      "message": "abc",
-      "userId": "1",
-      "id": 7
-    },
-    {
-      "message": "321",
-      "userId": "1",
-      "id": 8
-    },
-    {
-      "message": "tree",
-      "userId": "1",
-      "id": 9
-    },
-    {
-      "message": "r2vwgrvgr",
-      "userId": "1",
-      "id": 10
-    },
-    {
-      "message": "Choopin broccoli",
-      "userId": "1",
-      "id": 11
-    },
-    {
-      "message": "this is a post",
-      "userId": "5",
-      "id": 12
-    },
-    {
-      "message": "Hey guys, I'm on Yak now!",
-      "userId": 6,
-      "id": 13
-    },
-    {
-      "message": "Found an awesome new artist today, totally hyped",
-      "userId": 8,
-      "id": 14
-    },
-    {
-      "message": "Wearing red again today.",
-      "userId": 7,
-      "id": 15
-    },
-    {
-      "message": "chilling out in Nashville today, hit me up if you wanna hang out!",
-      "userId": 9,
-      "id": 16
-    },
-    {
-      "message": "Working all week, ill be free again come next week!",
-      "userId": 5,
-      "id": 17
     }
   ],
-  "events": [],
-  "ads": [
+  "doctors": [
     {
       "id": 1,
-      "message": "Fugit deserunt eum molestiae et consequuntur",
-      "company": "Zboncak - Kerluke"
+      "userId": 1,
+      "name": "Dr. Daniel Schuster",
+      "specialty": "ENT",
+      "address": "100 Medical Plaza Nashville, TN 37212",
+      "phoneNumber": "615-938-4372"
     },
     {
       "id": 2,
-      "message": "Et culpa consequatur facere omnis modi quod ipsum.",
-      "company": "Roberts, Moen and Moore"
+      "userId": 1,
+      "name": "Dr. Ed Gould",
+      "specialty": "Nephrology",
+      "address": "100 Medical Plaza Nashville, TN 37212",
+      "phoneNumber": "615-337-4226"
+    }
+  ],
+  "medications": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "Prednisone",
+      "dosage": "100mg",
+      "frequency": "2x Daily",
+      "rxNumber": "3827394",
+      "archieve": false
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "name": "Vitamin B12",
+      "dosage": "500mg",
+      "frequency": "1x Daily",
+      "rxNumber": "32073432",
+      "archieve": false
     },
     {
       "id": 3,
-      "message": "Saepe necessitatibus dolor laborum.",
-      "company": "Barton and Sons"
-    },
-    {
-      "id": 4,
-      "message": "Sint consectetur animi ut eveniet. Velit et voluptatem et neque ut velit ut accusamus.",
-      "company": "Hartmann - Graham"
-    },
-    {
-      "id": 5,
-      "message": "Fugit deserunt eum molestiae et consequuntur",
-      "company": "Zboncak - Kerluke"
-    },
-    {
-      "id": 6,
-      "message": "Et culpa consequatur facere omnis modi quod ipsum.",
-      "company": "Roberts, Moen and Moore"
-    },
-    {
-      "id": 7,
-      "message": "Saepe necessitatibus dolor laborum.",
-      "company": "Barton and Sons"
-    },
-    {
-      "id": 8,
-      "message": "Sint consectetur animi ut eveniet. Velit et voluptatem et neque ut velit ut accusamus.",
-      "company": "Hartmann - Graham"
+      "userId": 1,
+      "name": "Vitamin D3",
+      "dosage": "2000iu",
+      "frequency": "1x Daily",
+      "rxNumber": "9074383",
+      "archieve": false
     }
   ]
 }

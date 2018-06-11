@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css'
+import $ from "jquery"
 import NavBar from './nav/NavBar';
 import Home from './newsfeed/Home';
 import Login from './auth/Login';
@@ -8,6 +9,7 @@ import SearchResults from './search/SearchResults';
 import Profile from "./user/Profile"
 import Register from "./auth/Register"
 import RegModal from "./auth/RegModal"
+
 
 class App extends Component {
 
@@ -73,6 +75,10 @@ class App extends Component {
 
     }.bind(this)
 
+
+    changeDivImage = function() {
+        $("body").toggleClass("on");
+    }.bind(this)
     /*
         Function to determine which main view to render.
 
@@ -87,7 +93,7 @@ class App extends Component {
         } else {
             switch (this.state.currentView) {
                 case "logout":
-                    return <Login showView={this.showView} setActiveUser={this.setActiveUser} />
+                    return <Login showView={this.showView} setActiveUser={this.setActiveUser} changeDivImage= {this.changeDivImage} />
                 case "results":
                     return <SearchResults terms={this.state.searchTerms} showView={this.showView} />
                 case "profile":

@@ -1,8 +1,8 @@
 import React, { Component } from "react"
+import $ from "jquery"
 import "./login.css"
 import Register from "./Register.js"
 import RegModal from "./RegModal"
-
 
 export default class Login extends Component {
 
@@ -20,6 +20,10 @@ export default class Login extends Component {
         this.setState(stateToChange)
     }.bind(this)
 
+    changeDivImage = function() {
+        $("body").toggleClass("on");
+    }.bind(this)
+
     register = function(){
         if(this.state.register === true){
             this.setState({register: false})
@@ -27,6 +31,7 @@ export default class Login extends Component {
             this.setState({register: true})
         }
     }.bind(this)
+
 
     // Handle for login submit
     handleLogin = function (e) {
@@ -40,6 +45,7 @@ export default class Login extends Component {
                     if(user[0].password === this.state.password){
                         this.props.setActiveUser(user[0].id)
                         this.props.showView("home")
+                        this.changeDivImage()
                     }else{
                         alert("Incorrect password!")
                      }

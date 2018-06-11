@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import yak from "../images/Logo.png"
+import logo from "../images/Logo.png"
 import $ from "jquery"
 import profilepic from "../images/settings.png"
 import "./NavBar.css"
@@ -43,7 +43,7 @@ export default class NavBar extends Component {
         return (
             <nav className="navbar navbar-light fixed-top white flex-md-nowrap p-0 shadow">
                 <a className="navbar-brand col-sm-3 col-md-2 mr-0" onClick={this.props.viewHandler} href="#">
-                    <img id="nav__home" src={yak} style={{ height: `50px` }} />
+                    <img id="nav__home" src={logo} style={{ height: `50px` }} />
                 </a>
                 <input id="searchTerms"
                     value={this.state.searchTerms}
@@ -51,7 +51,7 @@ export default class NavBar extends Component {
                     onKeyPress={this.search}
                     className="form-control w-100"
                     type="search"
-                    placeholder="Search"
+                    placeholder="Search Your Diary"
                     aria-label="Search" />
                 <ul className="navbar-nav px-3">
                     <li className="nav-item text-nowrap">

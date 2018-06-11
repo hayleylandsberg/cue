@@ -1,0 +1,22 @@
+#sideNav {
+    background-color: #71797A;
+    min-height: 100%;
+    text-align: center;
+    width: 80%;
+    color: white;
+    font-family: avenir;
+}
+
+.avatarLarge {
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#activeUserName {
+    margin-bottom: 50px;
+}
+
+.icon {
+    margin: 10px;
+}

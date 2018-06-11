@@ -1,8 +1,10 @@
 import React, { Component } from "react"
 import "./Home.css"
+import $ from "jquery"
 import PostList from "./PostList";
 import MedicationList from "../medication/MedicationList";
 import FriendList from "../friends/FriendList";
+import DoctorList from "../doctors/DoctorList"
 
 export default class Home extends Component {
 
@@ -18,11 +20,12 @@ export default class Home extends Component {
         },
         body: JSON.stringify({
             message: this.state.message,
-            userId: this.props.activeUser
+            userId: this.props.activeUser,
+            date: new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(Date.now())
         })
     })
     .then(() => {
-        return fetch("http://localhost:5001/posts?_sort=id&_order=desc&_expand=user")
+        return fetch(`http://localhost:5001/posts?&userId=${this.props.activeUser}&_sort=id&_order=desc&_expand=user`)
     })
     .then(r => r.json())
     .then(posts => {
@@ -39,7 +42,7 @@ export default class Home extends Component {
     }
 
     componentDidMount() {
-        fetch(`http://localhost:5001/posts?_sort=id&_order=desc&_expand=user`)
+        fetch(`http://localhost:5001/posts?&userId=${this.props.activeUser}&_sort=id&_order=desc&_expand=user`)
             .then(r => r.json())
             .then(posts => this.setState({ posts: posts }))
     }
@@ -49,7 +52,7 @@ export default class Home extends Component {
             <div className="container-full">
                 <div className="row">
                     <div className="col col-sm-3">
-                        <FriendList />
+                        <FriendList activeUser={this.props.activeUser} user={this.props.userProfile}/>
                     </div>
                     <div className="col content col-sm-6">
                         <div className="newsfeed">
@@ -69,7 +72,8 @@ export default class Home extends Component {
                         </div>
                     </div>
                     <div className="col col-sm-3">
-                        <MedicationList />
+                        <MedicationList activeUser={this.props.activeUser} />
+                        <DoctorList activeUser={this.props.activeUser} />
                     </div>
                 </div>
             </div>

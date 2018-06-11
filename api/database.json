@@ -36,25 +36,40 @@
   "friends": [],
   "posts": [
     {
-      "message": "Today I have pain in my right wrist.",
-      "userId": "1",
+      "message": "This morning I have felt light headed and have had a lot of right ear pain.",
+      "userId": 1,
+      "date": "06/11/2018, 11:05:17 AM",
       "id": 1
     },
     {
-      "message": "I had a migraine most of the morning. The afternoon I felt okay, but weak.",
-      "userId": "1",
+      "message": "Today was a good day for me. I felt energized and no pain.",
+      "userId": "2",
+      "date": "06/11/2018, 1:16:17 PM",
       "id": 2
-    },
-    {
-      "message": "hi",
-      "userId": 1,
-      "id": 3
     }
   ],
-  "events": [],
+  "doctors": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "Dr. Daniel Schuster",
+      "specialty": "ENT",
+      "address": "100 Medical Plaza Nashville, TN 37212",
+      "phoneNumber": "615-938-4372"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "name": "Dr. Ed Gould",
+      "specialty": "Nephrology",
+      "address": "100 Medical Plaza Nashville, TN 37212",
+      "phoneNumber": "615-337-4226"
+    }
+  ],
   "medications": [
     {
       "id": 1,
+      "userId": 1,
       "name": "Prednisone",
       "dosage": "100mg",
       "frequency": "2x Daily",
@@ -63,6 +78,7 @@
     },
     {
       "id": 2,
+      "userId": 1,
       "name": "Vitamin B12",
       "dosage": "500mg",
       "frequency": "1x Daily",
@@ -71,6 +87,7 @@
     },
     {
       "id": 3,
+      "userId": 1,
       "name": "Vitamin D3",
       "dosage": "2000iu",
       "frequency": "1x Daily",

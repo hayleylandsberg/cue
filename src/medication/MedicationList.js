@@ -9,7 +9,7 @@ export default class MedicationList extends Component {
     }
 
     componentDidMount () {
-        fetch(`http://localhost:5001/medications`)
+        fetch(`http://localhost:5001/medications?&userId=${this.props.activeUser}&_sort=id&_order=desc&_expand=user`)
             .then(r => r.json())
             .then(medication => this.setState({medications: medication}))
     }

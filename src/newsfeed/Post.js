@@ -14,7 +14,7 @@ export default class Post extends Component {
             {/* <img className="avatar" src={require('../images/avatar1.png')}/> */}
                 <div className="card-body">
                     {/* <h5 className="card-title">{this.props.post.user.firstName} {this.props.post.user.lastName}</h5> */}
-                    <h5>{new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(Date.now())}</h5>
+                    <h5>{this.props.post.date}</h5>
                     <p className="card-text">
                         {this.props.post.message}
                     </p>

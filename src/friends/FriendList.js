@@ -3,17 +3,29 @@ import "./Friend.css"
 
 export default class FriendList extends Component {
 
+        state = {
+            users: {
+            }
+        }
+    
+        componentDidMount(){
+            fetch(`http://localhost:5001/users?id=${this.props.activeUser}`)
+            .then(r => r.json()).then(userData => {
+                console.log(userData)
+                this.setState({users: userData[0]})
+            })
+        }
+    
     render() {
         return (
             <div id="sideNav">
             <img className="avatarLarge" src={require('../images/avatar1.png')}/>
-            <h4 id="activeUserName">active user</h4>
-            <div className="flexIcons"><img src={require('../images/first-aid-case.png')}/>
-            <a><h5>Medicine Cabinet</h5></a></div>
-            <div className="flexIcons"><img src={require('../images/diary.png')}/> 
-            <a><h5>Diary</h5></a></div>
-            <div className="flexIcons"><img src={require('../images/doctor1.png')}/>
-            <a><h5>Doctors</h5></a></div>
+            <h4 id="activeUserName">{this.state.users.firstName} {this.state.users.lastName}</h4>
+            <img className="icon" src={require('../images/first-aid-case.png')}/>
+            <img className="icon" src={require('../images/diary.png')}/>
+            <img className="icon" src={require('../images/doctor1.png')}/>
+            <img className="icon" src={require('../images/medicine.png')}/>
+            <img className="icon" src={require('../images/siren.png')}/>
             </div>
         )
     }

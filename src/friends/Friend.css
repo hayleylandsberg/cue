@@ -17,8 +17,6 @@
     margin-bottom: 50px;
 }
 
-.flexIcons {
-    display: flex;
-    justify-content: space-between;
-    margin: 30px 40px 30px 40px;
+.icon {
+    margin: 10px;
 }

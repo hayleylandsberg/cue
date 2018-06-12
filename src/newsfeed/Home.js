@@ -72,8 +72,12 @@ render() {
                     </div>
                 </div>
                 <div className="col col-sm-3">
-                    <MedicationList activeUser={this.props.activeUser} />
-                    <DoctorList activeUser={this.props.activeUser} />
+                    <div>
+                        <MedicationList activeUser={this.props.activeUser} />
+                    </div>
+                    <div>
+                        <DoctorList activeUser={this.props.activeUser} />
+                    </div>
                 </div>
             </div>
         </div>

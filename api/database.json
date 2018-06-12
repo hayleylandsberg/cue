@@ -88,14 +88,6 @@
       "lastName": "310-283-3456",
       "userId": 1,
       "id": 3
-    },
-    {
-      "email": "dfsd",
-      "password": "fds",
-      "firstName": "fds",
-      "lastName": "fds",
-      "userId": 1,
-      "id": 4
     }
   ],
   "medications": [
@@ -125,6 +117,15 @@
       "frequency": "1x Daily",
       "rxNumber": "9074383",
       "archieve": false
+    },
+    {
+      "name": "",
+      "dosage": "",
+      "frequency": "",
+      "rxNumber": "",
+      "userId": 1,
+      "archieve": false,
+      "id": 4
     }
   ]
 }

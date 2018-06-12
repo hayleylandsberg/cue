@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Medication from "./Medication";
+import RegModalMedication from "./RegModalMedication"
 
 
 export default class MedicationList extends Component {
@@ -18,7 +19,7 @@ export default class MedicationList extends Component {
         return (
             <div className="medication">
                 <div id="medicine-heading"><h3>Medicine Cabinet</h3>
-                <img className="addBtn" width="40px" src={require ("../images/plus.png")}></img>
+                <div><RegModalMedication showView={this.props.showView} setActiveUser={this.props.setActiveUser} /></div>
                 </div>
 
                 {

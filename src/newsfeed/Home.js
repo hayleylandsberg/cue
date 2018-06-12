@@ -3,7 +3,7 @@ import "./Home.css"
 import $ from "jquery"
 import PostList from "./PostList";
 import MedicationList from "../medication/MedicationList";
-import FriendList from "../friends/FriendList";
+import PersonalList from "../sideNav/PersonalList";
 import DoctorList from "../doctors/DoctorList"
 
 export default class Home extends Component {
@@ -47,39 +47,40 @@ export default class Home extends Component {
             .then(posts => this.setState({ posts: posts }))
     }
 
-    render() {
-        return (
-            <div className="container-full">
-                <div className="row">
-                    <div className="col col-sm-3">
-                        <FriendList activeUser={this.props.activeUser} user={this.props.userProfile}/>
-                    </div>
-                    <div className="col content col-sm-6">
-                        <div className="newsfeed">
-                            <form>
-                                <div className="form-group">
-                                    <label htmlForm="message"><h5>How are you feeling today?</h5></label>
-                                    <textarea id="message"
-                                              value={this.state.message}
-                                              onChange={this.handleFieldChange}
-                                              className="form-control"
-                                              rows="4"></textarea>
-                                </div>
-                                <button type="button" onClick={this.postMessage} className="btn btn-info btn-lg">Log</button>
-                            </form>
+render() {
+    return (
+        <div className="container-full">
+            <div className="row">
+                <div className="col col-sm-3">
+                    <PersonalList activeUser={this.props.activeUser} />
+                </div>
+                <div className="col content col-sm-6">
+                    <div className="newsfeed">
+                        <form>
+                            <div className="form-group">
+                                <label htmlForm="message"><h5>How are you feeling today?</h5></label>
+                                <textarea id="message"
+                                          value={this.state.message}
+                                          onChange={this.handleFieldChange}
+                                          className="form-control"
+                                          rows="4"></textarea>
+                            </div>
+                            <button type="button" onClick={this.postMessage} className="btn btn-info btn-lg">Log</button>
+                        </form>
 
-                            <PostList posts={this.state.posts} activeUser={this.props.activeUser} />
-                        </div>
-                    </div>
-                    <div className="col col-sm-3">
-                        <MedicationList activeUser={this.props.activeUser} />
-                        <DoctorList activeUser={this.props.activeUser} />
+                        <PostList posts={this.state.posts} activeUser={this.props.activeUser} />
                     </div>
                 </div>
+                <div className="col col-sm-3">
+                    <MedicationList activeUser={this.props.activeUser} />
+                    <DoctorList activeUser={this.props.activeUser} />
+                </div>
             </div>
+        </div>
 
 
 
-        )
-    }
+    )
 }
+}
+

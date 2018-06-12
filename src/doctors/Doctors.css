@@ -13,3 +13,14 @@
 .doctors {
     margin-top: 30px;
 }
+
+#doctor-heading {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.flexForm-Doctor {
+    margin: 70px;
+}

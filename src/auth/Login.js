@@ -68,6 +68,8 @@ export default class Login extends Component {
     */
     render() {
         return (
+            <div>
+                <img id="background" src={require("../images/scooter.jpg")}></img>
             <form className="form-signin" onSubmit={this.handleLogin}>
                 <h1 className="h3 mb-3 font-weight-normal h1-large">Welcome to <b>Cue.</b></h1>
                 <p className="h3 mb-3 font-weight-normal">The Easiest Way to Manage Your Medical Needs.</p>
@@ -82,6 +84,7 @@ export default class Login extends Component {
                 <div><RegModal showView={this.props.showView} setActiveUser={this.props.setActiveUser}/></div>
                 <p className="mt-5 mb-3 text-muted">Cue. All Content © 2018</p>
             </form>
+            </div>
 
 
         )

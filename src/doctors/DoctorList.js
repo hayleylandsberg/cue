@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Doctor from "./Doctor";
+import RegModalDoctor from "./RegModalDoctor"
 
 
 export default class DoctorList extends Component {
@@ -17,9 +18,11 @@ export default class DoctorList extends Component {
     render() {
         return (
             <div className="doctors">
-                <h3>Doctors List</h3>
+                <div id="doctor-heading"><h3>Your Doctors</h3>
+                <div><RegModalDoctor showView={this.props.showView} setActiveUser={this.props.setActiveUser}/></div>
+                </div>
                 {
-                    this.state.doctors.map(doctor => <Doctor key={doctor.id} doctor={doctor} />)
+                    this.state.doctors.slice(0).reverse().map(doctor => <Doctor key={doctor.id} doctor={doctor} />)
                 }
             </div>
         )

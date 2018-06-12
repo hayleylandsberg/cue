@@ -5,15 +5,17 @@
       "password": "me",
       "firstName": "Hayley",
       "lastName": "Landsberg",
+      "address": "1937 Kimbark Drive",
       "city": "Nashville",
       "state": "Tennessee",
       "age": "28",
+      "gender": "female",
       "conditions": "test-condition",
-      "allergies": "test-allergy",
-      "pharmacyName": "1937 Kimbark Drive",
-      "pharmacyNumber": "6154746473",
+      "allergies": "Penicillin",
+      "pharmacyName": "CVS - Green Hills",
+      "pharmacyNumber": "615-474-6473",
       "emergencyName": "Anthony Landsberg",
-      "emergencyNumber": "3103394554",
+      "emergencyNumber": "310-339-4554",
       "id": 1
     },
     {
@@ -21,15 +23,17 @@
       "password": "me",
       "firstName": "Anthony",
       "lastName": "Landsberg",
+      "address": "1937 Kimbark Drive",
       "city": "Nashville",
       "state": "TN",
       "age": "30",
+      "gender": "male",
       "conditions": "High Blood Pressue",
       "allergies": "Bees",
       "pharmacyName": "CVS",
-      "pharmacyNumber": "6154746473",
+      "pharmacyNumber": "615-474-6473",
       "emergencyName": "Hayley Landsberg",
-      "emergencyNumber": "3108823105",
+      "emergencyNumber": "310-882-3105",
       "id": 2
     }
   ],
@@ -46,6 +50,18 @@
       "userId": "2",
       "date": "06/11/2018, 1:16:17 PM",
       "id": 2
+    },
+    {
+      "message": "This afternoon I'm having left hand pain.",
+      "userId": "1",
+      "date": "06/11/2018, 2:20:24 PM",
+      "id": 3
+    },
+    {
+      "message": "Today I am feeling a bit anxious, but I'm not sure why. I've had a bagel for breakfast and no coffee.",
+      "userId": 2,
+      "date": "06/12/2018, 11:23:32 AM",
+      "id": 4
     }
   ],
   "doctors": [
@@ -64,6 +80,22 @@
       "specialty": "Nephrology",
       "address": "100 Medical Plaza Nashville, TN 37212",
       "phoneNumber": "615-337-4226"
+    },
+    {
+      "email": "Dr. Allison Baker",
+      "password": "Rheumatology",
+      "firstName": "300 N Beverly Drive Beverly Hills, CA 90211",
+      "lastName": "310-283-3456",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "email": "dfsd",
+      "password": "fds",
+      "firstName": "fds",
+      "lastName": "fds",
+      "userId": 1,
+      "id": 4
     }
   ],
   "medications": [

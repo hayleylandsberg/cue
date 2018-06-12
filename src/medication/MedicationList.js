@@ -17,9 +17,12 @@ export default class MedicationList extends Component {
     render() {
         return (
             <div className="medication">
-                <h3>Medicine Cabinet</h3>
+                <div id="medicine-heading"><h3>Medicine Cabinet</h3>
+                <img className="addBtn" width="40px" src={require ("../images/plus.png")}></img>
+                </div>
+
                 {
-                    this.state.medications.map(medication => <Medication key={medication.id} medication={medication} />)
+                    this.state.medications.slice(0).reverse().map(medication => <Medication key={medication.id} medication={medication} />)
                 }
             </div>
         )

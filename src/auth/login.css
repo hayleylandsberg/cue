@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: avenir;
     background-image: url("../images/scooter.jpg");
     background-size: cover;
@@ -7,7 +7,7 @@ body {
 
 body.on { 
     background-image: none;
-}
+} */
 
 .form-signin {
     width: 100%;
@@ -47,4 +47,14 @@ body.on {
 
 .h1-large {
     font-size: 3.15em;
+}
+
+#background {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    zoom: -1;
+    z-index: -1;
 }

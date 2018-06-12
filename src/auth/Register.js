@@ -81,6 +81,8 @@ export default class Register extends Component {
             <input onChange={this.handleFieldChange} type="First Name" id="firstName" className="form-control" placeholder="First Name" required="" autoFocus="" />
             <label htmlFor="inputLastName" className="sr-only">Last Name</label>
             <input onChange={this.handleFieldChange} type="Last Name" id="lastName" className="form-control" placeholder="Last Name" required="" autoFocus="" />
+            <label htmlFor="inputAddress" className="sr-only">Address</label>
+            <input onChange={this.handleFieldChange} type="Address" id="address" className="form-control" placeholder="Address" required="" autoFocus="" />
             <label htmlFor="inputCity" className="sr-only">City</label>
             <input onChange={this.handleFieldChange} type="City" id="city" className="form-control" placeholder="City" required="" autoFocus="" />
             <label htmlFor="inputState" className="sr-only">State</label>
@@ -91,6 +93,8 @@ export default class Register extends Component {
             <div id="secondFormDiv">
             <label htmlFor="inputAge" className="sr-only">Age</label>
             <input onChange={this.handleFieldChange} type="age" id="age" className="form-control" placeholder="Age" required="" />
+            <label htmlFor="inputGender" className="sr-only">Gender</label>
+            <input onChange={this.handleFieldChange} type="Gender" id="gender" className="form-control" placeholder="Gender: female / male" required="" autoFocus="" />
             <label htmlFor="inputConditions" className="sr-only">Conditions</label>
             <input onChange={this.handleFieldChange} type="conditions" id="conditions" className="form-control" placeholder="Conditions" required="" />
             <label htmlFor="inputAllergies" className="sr-only">Allergies</label>

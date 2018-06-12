@@ -14,3 +14,10 @@
     display: flex;
     justify-content: space-around;
 }
+
+#medicine-heading {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+    margin-left: 10px;
+}

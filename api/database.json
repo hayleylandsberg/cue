@@ -82,10 +82,10 @@
       "phoneNumber": "615-337-4226"
     },
     {
-      "email": "Dr. Allison Baker",
-      "password": "Rheumatology",
-      "firstName": "300 N Beverly Drive Beverly Hills, CA 90211",
-      "lastName": "310-283-3456",
+      "name": "Dr. Allison Baker",
+      "specialty": "Rheumatology",
+      "address": "300 N Beverly Drive Beverly Hills, CA 90211",
+      "phoneNumber": "310-842-3928",
       "userId": 1,
       "id": 3
     }
@@ -110,22 +110,40 @@
       "archieve": false
     },
     {
-      "id": 3,
-      "userId": 1,
       "name": "Vitamin D3",
       "dosage": "2000iu",
       "frequency": "1x Daily",
-      "rxNumber": "9074383",
-      "archieve": false
+      "rxNumber": "8473292",
+      "userId": 1,
+      "archieve": false,
+      "id": 3
     },
     {
-      "name": "",
-      "dosage": "",
-      "frequency": "",
-      "rxNumber": "",
+      "name": "Hydroxichloroquine",
+      "dosage": "200mg",
+      "frequency": "2x Daily",
+      "rxNumber": "843962",
       "userId": 1,
       "archieve": false,
       "id": 4
+    },
+    {
+      "name": "Methotrexate",
+      "dosage": "500mg",
+      "frequency": "2x Week",
+      "rxNumber": "9274099",
+      "userId": 1,
+      "archieve": false,
+      "id": 5
+    },
+    {
+      "name": "Vitamin A",
+      "dosage": "300iu",
+      "frequency": "1x Daily",
+      "rxNumber": "849356495",
+      "userId": 1,
+      "archieve": false,
+      "id": 6
     }
   ]
 }

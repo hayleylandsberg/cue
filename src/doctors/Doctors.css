@@ -11,7 +11,13 @@
 } */
 
 .doctors {
-    margin-top: 30px;
+    margin-top: 50px;
+}
+
+#listOfDoctors {
+    overflow: auto; 
+    max-width: 435px; 
+    height: 400px;
 }
 
 #doctor-heading {

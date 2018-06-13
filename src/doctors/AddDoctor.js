@@ -16,6 +16,7 @@ const customStyles = {
 export default class AddDoctor extends Component {
 
     state={
+        doctors: [],
         name: "",
         specialty: "",
         address: "",
@@ -40,10 +41,10 @@ export default class AddDoctor extends Component {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                email: this.state.name,
-                password: this.state.specialty,
-                firstName: this.state.address,
-                lastName: this.state.phoneNumber,
+                name: this.state.name,
+                specialty: this.state.specialty,
+                address: this.state.address,
+                phoneNumber: this.state.phoneNumber,
                 userId: parseInt(this.activeUser)
             })
         })
@@ -51,6 +52,7 @@ export default class AddDoctor extends Component {
         // Set local storage with newly created user's id and show home view
         .then(newUser => {
             alert("Your doctor has been added to your Doctors List.")
+            this.props.displayAllDoctors()
         })
     }.bind(this);
 

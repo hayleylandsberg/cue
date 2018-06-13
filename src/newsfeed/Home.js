@@ -10,7 +10,9 @@ export default class Home extends Component {
 
     state = {
         message: "",
-        posts: []
+        posts: [],
+        medications: [],
+        doctors: []
     }
 
     postMessage = (text) => fetch("http://localhost:5001/posts", {
@@ -40,6 +42,18 @@ export default class Home extends Component {
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
+
+    displayAllMedications = function () {
+        fetch(`http://localhost:5001/medications?&userId=${this.props.activeUser}&_sort=id&_order=desc&_expand=user`)
+            .then(r => r.json())
+            .then(medication => this.setState({medications: medication}))
+    }.bind(this)
+
+    displayAllDoctors = function () {
+        fetch(`http://localhost:5001/doctors?&userId=${this.props.activeUser}&_sort=id&_order=desc&_expand=user`)
+            .then(r => r.json())
+            .then(doctor => this.setState({doctors: doctor}))
+    }.bind(this)
 
     componentDidMount() {
         fetch(`http://localhost:5001/posts?&userId=${this.props.activeUser}&_sort=id&_order=desc&_expand=user`)
@@ -73,10 +87,10 @@ render() {
                 </div>
                 <div className="col col-sm-3">
                     <div>
-                        <MedicationList activeUser={this.props.activeUser} />
+                        <MedicationList activeUser={this.props.activeUser} displayAllMedications={this.displayAllMedications} medications={this.state.medications}/>
                     </div>
                     <div>
-                        <DoctorList activeUser={this.props.activeUser} />
+                        <DoctorList activeUser={this.props.activeUser} displayAllDoctors={this.displayAllDoctors} doctors={this.state.doctors}/>
                     </div>
                 </div>
             </div>

@@ -13,9 +13,10 @@ const customStyles = {
   }
 
 
-export default class AddDoctor extends Component {
+export default class AddMedication extends Component {
 
     state={
+        medications: [],
         name: "",
         dosage: "",
         frequency: "",
@@ -53,6 +54,7 @@ export default class AddDoctor extends Component {
         // Set local storage with newly created user's id and show home view
         .then(newUser => {
             alert("Your Medication has been added to your Medicine Cabinet.")
+            this.props.displayAllMedications()
         })
     }.bind(this);
 

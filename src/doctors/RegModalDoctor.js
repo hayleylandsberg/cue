@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-import Register from "./Register"
+import AddDoctor from "./AddDoctor"
 
 const customStyles = {
   content : {
@@ -46,7 +46,8 @@ class RegModal extends React.Component {
   render() {
     return (
       <div>
-        <button className="btn btn-lg btn-gray btn-block" id="mainSignUp" type="button"  onClick={this.openModal}>Register</button>
+        {/* <button className="btn btn-lg btn-gray btn-block" id="mainSignUp" type="button"  onClick={this.openModal}>Add a Doctor</button> */}
+        <img className="addBtn" width="40px" onClick={this.openModal} src={require ("../images/plus.png")}></img>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -55,7 +56,7 @@ class RegModal extends React.Component {
           contentLabel="Example Modal"
         >
 
-          <Register onRequestClose={this.closeModal}/>
+          <AddDoctor activeUser = {this.props.activeUser} displayAllDoctors={this.props.displayAllDoctors} onRequestClose={this.closeModal} />
         </Modal>
       </div>
     );

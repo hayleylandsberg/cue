@@ -10,7 +10,8 @@ export default class SearchResults extends Component {
     state = {
         posts: [],
         users: [],
-        events: []
+        doctors: [],
+        medications: []
     }
 
     // shouldComponentUpdate(nextProps, nextState){
@@ -23,11 +24,16 @@ export default class SearchResults extends Component {
             .then(r => r.json())
             .then(posts => {
                 newState.posts = posts
-                return fetch(`http://localhost:5001/users?q=${encodeURI(this.props.terms)}`)
+                return fetch(`http://localhost:5001/medications?q=${encodeURI(this.props.terms)}`)
             })
             .then(r => r.json())
-            .then(users => {
-                newState.users = users
+            .then(medications => {
+                newState.medications = medications
+                return fetch(`http://localhost:5001/doctors?q=${encodeURI(this.props.terms)}`)
+            })
+            .then(r => r.json())
+            .then(doctors => {
+                newState.doctors = doctors
                 this.setState(newState)
             })
     }
@@ -38,16 +44,30 @@ export default class SearchResults extends Component {
             .then(r => r.json())
             .then(posts => {
                 newState.posts = posts
-                return fetch(`http://localhost:5001/users?q=${encodeURI(this.props.terms)}`)
+                return fetch(`http://localhost:5001/medications?q=${encodeURI(this.props.terms)}`)
             })
             .then(r => r.json())
-            .then(users => {
-                newState.users = users
+            .then(medications => {
+                newState.medications = medications
+                return fetch(`http://localhost:5001/doctors?q=${encodeURI(this.props.terms)}`)
+            })
+            .then(r => r.json())
+            .then(doctors => {
+                newState.doctors = doctors
                 this.setState(newState)
             })
     }
 
     render() {
+
+        const gender = this.state.users.gender;
+                        let image;
+                        if (gender === "female") {
+                        image = <img className="card-img-top avatar" src={require('../images/avatar1.png')}/>
+                        } else {
+                        image = <img className="card-img-top avatar" src={require('../images/avatar.png')}/>
+                        }
+
         return (
             <div className="searchResults">
                 <h1>Search Results for {`"${this.props.terms}"`}</h1>
@@ -67,13 +87,34 @@ export default class SearchResults extends Component {
                 }
 
                 {
-                    this.state.users.map(u =>
-                        <div className="card post" key={u.id}>
-                            <img className="card-img-top avatar" src={Avatar} alt="Generic person image" />
+                    this.state.medications.map(m =>
+                        <div className="card post" key={m.id}>
+                            {/* {image} */}
                             <div className="card-body">
-                                <h5 className="card-title">{u.firstName} {u.lastName}</h5>
-                                <h6 className="card-title">{u.email}</h6>
-                                <a href="#" className="btn btn-outline-success" id={`results__profile__${u.id}`} onClick={this.props.showView}>View profile</a>
+                                <h5 className="card-title">{m.name}</h5>
+                                <div className="card-info">
+                                <p>{m.dosage}</p> 
+                                <p>{m.frequency}</p> 
+                                <p>{m.rxNumber}</p>
+                            </div>
+                                <a href="#" className="btn btn-outline-success" id={`results__profile__${m.id}`} onClick={this.props.showView}>View Medicine Cabinet</a>
+                            </div>
+                        </div>
+                    )
+                }
+
+                {
+                    this.state.doctors.map(d =>
+                        <div className="card post" key={d.id}>
+                            {/* {image} */}
+                            <div className="card-body">
+                                <h5 className="card-title">{d.name}</h5>
+                                <div className="card-info-doc">
+                                <p>{d.specialty}</p> 
+                                <p>{d.address}</p> 
+                                <p>{d.phoneNumber}</p>
+                            </div>
+                                <a href="#" className="btn btn-outline-success" id={`results__profile__${d.id}`} onClick={this.props.showView}>See All Doctors</a>
                             </div>
                         </div>
                     )

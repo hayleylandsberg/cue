@@ -3,6 +3,7 @@ import logo from "../images/Logo.png"
 import $ from "jquery"
 import profilepic from "../images/settings.png"
 import "./NavBar.css"
+import exportpic from "../images/export.png"
 
 
 export default class NavBar extends Component {
@@ -51,7 +52,7 @@ export default class NavBar extends Component {
                     onKeyPress={this.search}
                     className="form-control w-100"
                     type="search"
-                    placeholder="Search Your Diary"
+                    placeholder="Search Your Cue"
                     aria-label="Search" />
                 <ul className="navbar-nav px-3">
                     <li className="nav-item text-nowrap">
@@ -60,6 +61,16 @@ export default class NavBar extends Component {
                             <img id="navimg__profile"
                                  onClick={()=>$(".profileMenu").slideToggle(333)}
                                  src={profilepic} style={{ height: `30px` }} />
+                        </a>
+                    </li>
+                </ul>
+                <ul className="navbar-nav px-3">
+                    <li className="nav-item text-nowrap">
+                        <a className="nav-link" id="nav__export"
+                            /* onClick={this.props.viewHandler}*/ href="#">
+                            <img id="navimg__export"
+                                 onClick={()=>$("#").slideToggle(333)}
+                                 src={exportpic} style={{ height: `30px` }} />
                         </a>
                     </li>
                 </ul>

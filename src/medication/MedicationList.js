@@ -1,26 +1,30 @@
 import React, { Component } from "react"
 import Medication from "./Medication";
+import RegModal from "./RegModalMedication"
 
 
 export default class MedicationList extends Component {
 
     state = {
-        medications: []
+        medications: this.props.medications
     }
 
     componentDidMount () {
-        fetch(`http://localhost:5001/medications?&userId=${this.props.activeUser}&_sort=id&_order=desc&_expand=user`)
-            .then(r => r.json())
-            .then(medication => this.setState({medications: medication}))
+        this.props.displayAllMedications()
     }
 
     render() {
         return (
             <div className="medication">
-                <h3>Medicine Cabinet</h3>
+                <div id="medicine-heading"><h3>Medicine Cabinet</h3>
+                <div><RegModal showView={this.props.showView} setActiveUser={this.props.setActiveUser} displayAllMedications={this.props.displayAllMedications}/></div>
+                </div>
+                <div id="listOfMedications">
                 {
-                    this.state.medications.map(medication => <Medication key={medication.id} medication={medication} />)
+                    this.props.medications.slice(0).reverse().map(medication => <Medication key={medication.id} medication={medication} />)
+
                 }
+                </div>
             </div>
         )
     }

@@ -10,13 +10,17 @@
 .avatarLarge {
     width: 200px;
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 #activeUserName {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .icon {
     margin: 10px;
+}
+
+.info {
+    margin-top: 20px;
 }

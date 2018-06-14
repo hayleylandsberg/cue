@@ -11,5 +11,22 @@
 } */
 
 .doctors {
-    margin-top: 30px;
+    margin-top: 50px;
+}
+
+#listOfDoctors {
+    overflow: auto; 
+    max-width: 435px; 
+    height: 330px;
+}
+
+#doctor-heading {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.flexForm-Doctor {
+    margin: 70px;
 }

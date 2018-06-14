@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import swal from 'sweetalert'
 
 
 const customStyles = {
@@ -63,7 +64,8 @@ export default class Register extends Component {
 
         // Set local storage with newly created user's id and show home view
         .then(newUser => {
-            alert("Your user has been created, you may now log in!")
+            this.props.onRequestClose()
+            swal("Congrats!", "Your user has been created, you may now log in!", "success");
         })
     }.bind(this);
 

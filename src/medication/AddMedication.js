@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-
+import swal from 'sweetalert'
 
 const customStyles = {
     content : {
@@ -22,7 +22,7 @@ export default class AddMedication extends Component {
         frequency: "",
         rxNumber: "",
         userId: "",
-        archieve: false
+        archive: false
 
     }
 
@@ -47,13 +47,14 @@ export default class AddMedication extends Component {
                 frequency: this.state.frequency,
                 rxNumber: this.state.rxNumber,
                 userId: parseInt(this.activeUser),
-                archieve: false
+                archive: false
             })
         })
 
         // Set local storage with newly created user's id and show home view
         .then(newUser => {
-            alert("Your Medication has been added to your Medicine Cabinet.")
+            this.props.onRequestClose()
+            swal("Success!", "Your Medication has been added to your Medicine Cabinet.", "success")
             this.props.displayAllMedications()
         })
     }.bind(this);

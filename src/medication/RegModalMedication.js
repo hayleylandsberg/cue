@@ -56,7 +56,7 @@ class RegModal extends React.Component {
           contentLabel="Example Modal"
         >
 
-          <AddMedication activeUser = {this.props.activeUser} displayAllMedications={this.props.displayAllMedications}/>
+          <AddMedication activeUser = {this.props.activeUser} displayAllMedications={this.props.displayAllMedications} onRequestClose={this.closeModal} />
         </Modal>
       </div>
     );

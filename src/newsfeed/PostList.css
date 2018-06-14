@@ -1,3 +1,9 @@
 .postList {
     margin-top: 3em;
 }
+
+#diaryList {
+    overflow: auto; 
+    max-width: 871px; 
+    height: 410px;
+}

@@ -3,6 +3,7 @@ import $ from "jquery"
 import "./login.css"
 import Register from "./Register.js"
 import RegModal from "./RegModal"
+import swal from 'sweetalert'
 
 export default class Login extends Component {
 
@@ -47,11 +48,12 @@ export default class Login extends Component {
                         this.props.showView("home")
                         this.changeDivImage()
                     }else{
-                        alert("Incorrect password!")
+                        swal("Incorrect password!", "Please enter the correct password associated with this account.", "error");
+                        
                      }
                 // User doesn't exist
                 } else{
-                    alert("This user does not exist, feel free to sign up!")
+                    swal("This user does not exist!", "Feel free to sign up!", "warning")
                 }
             })
 

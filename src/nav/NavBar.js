@@ -52,7 +52,7 @@ export default class NavBar extends Component {
                     onKeyPress={this.search}
                     className="form-control w-100"
                     type="search"
-                    placeholder="Search Your Diary"
+                    placeholder="Search Your Cue"
                     aria-label="Search" />
                 <ul className="navbar-nav px-3">
                     <li className="nav-item text-nowrap">

@@ -62,6 +62,12 @@
       "userId": 2,
       "date": "06/12/2018, 11:23:32 AM",
       "id": 4
+    },
+    {
+      "message": "Today my left wrist is hurting. I have taken two Advil and there's still no relief.",
+      "userId": "1",
+      "date": "06/13/2018, 2:25:18 PM",
+      "id": 5
     }
   ],
   "doctors": [
@@ -98,7 +104,7 @@
       "dosage": "100mg",
       "frequency": "2x Daily",
       "rxNumber": "3827394",
-      "archieve": false
+      "archive": false
     },
     {
       "id": 2,
@@ -107,7 +113,7 @@
       "dosage": "500mg",
       "frequency": "1x Daily",
       "rxNumber": "32073432",
-      "archieve": false
+      "archive": false
     },
     {
       "name": "Vitamin D3",
@@ -115,7 +121,7 @@
       "frequency": "1x Daily",
       "rxNumber": "8473292",
       "userId": 1,
-      "archieve": false,
+      "archive": false,
       "id": 3
     },
     {
@@ -124,16 +130,16 @@
       "frequency": "2x Daily",
       "rxNumber": "843962",
       "userId": 1,
-      "archieve": false,
+      "archive": false,
       "id": 4
     },
     {
       "name": "Methotrexate",
-      "dosage": "500mg",
-      "frequency": "2x Week",
+      "dosage": "20mg",
+      "frequency": "1x Weekly",
       "rxNumber": "9274099",
       "userId": 1,
-      "archieve": false,
+      "archive": false,
       "id": 5
     },
     {
@@ -142,7 +148,7 @@
       "frequency": "1x Daily",
       "rxNumber": "849356495",
       "userId": 1,
-      "archieve": false,
+      "archive": false,
       "id": 6
     }
   ]

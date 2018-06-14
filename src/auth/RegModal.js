@@ -55,7 +55,7 @@ class RegModal extends React.Component {
           contentLabel="Example Modal"
         >
 
-          <Register/>
+          <Register onRequestClose={this.closeModal}/>
         </Modal>
       </div>
     );

@@ -18,55 +18,27 @@ export default class SearchResults extends Component {
     //     return this.props.terms !== nextProps.terms
     // }
 
-    componentDidUpdate(){
-        const newState = {}
-        fetch(`http://localhost:5001/posts?message_like=${encodeURI(this.props.terms)}&_expand=user`)
-            .then(r => r.json())
-            .then(posts => {
-                newState.posts = posts
-                return fetch(`http://localhost:5001/medications?q=${encodeURI(this.props.terms)}`)
-            })
-            .then(r => r.json())
-            .then(medications => {
-                newState.medications = medications
-                return fetch(`http://localhost:5001/doctors?q=${encodeURI(this.props.terms)}`)
-            })
-            .then(r => r.json())
-            .then(doctors => {
-                newState.doctors = doctors
-                this.setState(newState)
-            })
-    }
-
-    componentDidMount() {
-        const newState = {}
-        fetch(`http://localhost:5001/posts?message_like=${encodeURI(this.props.terms)}&_expand=user`)
-            .then(r => r.json())
-            .then(posts => {
-                newState.posts = posts
-                return fetch(`http://localhost:5001/medications?q=${encodeURI(this.props.terms)}`)
-            })
-            .then(r => r.json())
-            .then(medications => {
-                newState.medications = medications
-                return fetch(`http://localhost:5001/doctors?q=${encodeURI(this.props.terms)}`)
-            })
-            .then(r => r.json())
-            .then(doctors => {
-                newState.doctors = doctors
-                this.setState(newState)
-            })
-    }
+    // componentDidUpdate(){
+    //     const newState = {}
+    //     fetch(`http://localhost:5001/posts?message_like=${encodeURI(this.props.terms)}&userId=${this.props.activeUser}&_expand=user`)
+    //         .then(r => r.json())
+    //         .then(posts => {
+    //             newState.posts = posts
+    //             return fetch(`http://localhost:5001/medications?q=${encodeURI(this.props.terms)}`)
+    //         })
+    //         .then(r => r.json())
+    //         .then(medications => {
+    //             newState.medications = medications
+    //             return fetch(`http://localhost:5001/doctors?q=${encodeURI(this.props.terms)}&userId=${this.props.activeUser}&_sort=id&_order=desc&_expand=user`)
+    //         })
+    //         .then(r => r.json())
+    //         .then(doctors => {
+    //             newState.doctors = doctors
+    //             this.setState(newState)
+    //         })
+    // }
 
     render() {
-
-        const gender = this.state.users.gender;
-                        let image;
-                        if (gender === "female") {
-                        image = <img className="card-img-top avatar" src={require('../images/avatar1.png')}/>
-                        } else {
-                        image = <img className="card-img-top avatar" src={require('../images/avatar.png')}/>
-                        }
 
         return (
             <div className="searchResults">
@@ -80,7 +52,7 @@ export default class SearchResults extends Component {
                                 <p className="card-text">
                                     {p.message}
                                 </p>
-                                <a href="#" className="btn btn-outline-success">Like</a>
+                                <a href="#" className="btn btn-outline-success">Edit</a>
                             </div>
                         </div>
                     )

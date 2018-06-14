@@ -19,6 +19,7 @@ export default class AddDoctor extends Component {
         doctors: [],
         name: "",
         specialty: "",
+        facility: "",
         address: "",
         phoneNumber: "",
         userId: ""
@@ -43,6 +44,7 @@ export default class AddDoctor extends Component {
             body: JSON.stringify({
                 name: this.state.name,
                 specialty: this.state.specialty,
+                facility: this.state.facility,
                 address: this.state.address,
                 phoneNumber: this.state.phoneNumber,
                 userId: parseInt(this.activeUser)
@@ -66,6 +68,8 @@ export default class AddDoctor extends Component {
             <input onChange={this.handleFieldChange} type="name" id="name" className="form-control" placeholder="Doctor's Name" required="" autoFocus="" />
             <label htmlFor="inputSpecialty" className="sr-only">Doctor's Speciality</label>
             <input onChange={this.handleFieldChange} type="specialty" id="specialty" className="form-control" placeholder="Doctor's Specialty" required="" />
+            <label htmlFor="inputFacility" className="sr-only">Facility / Hospital</label>
+            <input onChange={this.handleFieldChange} type="facility" id="facility" className="form-control" placeholder="Facility / Hospital" required="" autoFocus="" />
             <label htmlFor="inputAddress" className="sr-only">Doctor's Address</label>
             <input onChange={this.handleFieldChange} type="address" id="address" className="form-control" placeholder="Doctor's Address" required="" autoFocus="" />
             <label htmlFor="inputPhoneNumber" className="sr-only">Doctor's Phone Number</label>

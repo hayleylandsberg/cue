@@ -59,11 +59,6 @@ export default class PersonalList extends Component {
                 <p>{this.state.users.emergencyName}</p>
                 <p>Phone: {this.state.users.emergencyNumber}</p>
             </div>
-            <img className="icon" src={require('../images/medicine-box.png')}/>
-            <img className="icon" src={require('../images/diary.png')}/>
-            <img className="icon" src={require('../images/doctor1.png')}/>
-            <img className="icon" src={require('../images/medicine.png')}/>
-            <img className="icon" src={require('../images/siren.png')}/>
             </div>
         )
     }

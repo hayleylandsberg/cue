@@ -25,3 +25,16 @@
     border: 1px solid #979797;
     border-radius: 5px;
 }
+
+a {
+    color: #979797;
+}
+
+a:hover {
+    color: #EB3825;
+}
+
+.menu-option {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}

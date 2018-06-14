@@ -6,7 +6,7 @@ import NavBar from './nav/NavBar';
 import Home from './newsfeed/Home';
 import Login from './auth/Login';
 import SearchResults from './search/SearchResults';
-import Profile from "./user/Profile"
+import Profile from "./userDiary/Profile"
 import Register from "./auth/Register"
 import RegModal from "./auth/RegModal"
 
@@ -18,7 +18,8 @@ class App extends Component {
         currentView: "login",
         searchTerms: "",
         activeUser: localStorage.getItem("yakId"),
-        userProfile: localStorage.getItem("yakId")
+        userProfile: localStorage.getItem("yakId"),
+        viewProps: {}
     }
 
     // Search handler -> passed to NavBar
@@ -43,7 +44,7 @@ class App extends Component {
 
     // View switcher -> passed to NavBar and Login
     // Argument can be an event (via NavBar) or a string (via Login)
-    showView = function (e) {
+    showView = function (e, ...props) {
         let view = null
         let user = this.state.userProfile
         // Click event triggered switching view
@@ -67,10 +68,11 @@ class App extends Component {
                 userProfile: user
             })
         }
-
+        
         // Update state to correct view will be rendered
         this.setState({
-            currentView: view
+            currentView: view,
+            viewProps: Object.assign({}, ...props)
         })
 
     }.bind(this)
@@ -95,7 +97,7 @@ class App extends Component {
                 case "logout":
                     return <Login showView={this.showView} setActiveUser={this.setActiveUser} changeDivImage= {this.changeDivImage} />
                 case "results":
-                    return <SearchResults terms={this.state.searchTerms} showView={this.showView} />
+                    return <SearchResults terms={this.state.searchTerms} showView={this.showView} {...this.state.viewProps}/>
                 case "profile":
                     return <Profile user={this.state.userProfile} />
                 case "home":

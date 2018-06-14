@@ -31,3 +31,14 @@
     max-width: 435px; 
     height: 330px;
 }
+
+.heading-meds {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.archive {
+    height: 20px;
+}

@@ -9,6 +9,8 @@ import SearchResults from './search/SearchResults';
 import Profile from "./userDiary/Profile"
 import Register from "./auth/Register"
 import RegModal from "./auth/RegModal"
+import MyDoctors from "./MyDoctors/MyDoctors";
+import MyCabinet from "./MyCabinet/MyCabinet";
 
 
 class App extends Component {
@@ -19,7 +21,9 @@ class App extends Component {
         searchTerms: "",
         activeUser: localStorage.getItem("yakId"),
         userProfile: localStorage.getItem("yakId"),
-        viewProps: {}
+        viewProps: {},
+        medications: [],
+        doctors: []
     }
 
     // Search handler -> passed to NavBar
@@ -28,6 +32,18 @@ class App extends Component {
             searchTerms: terms,
             currentView: "results"
         })
+    }.bind(this)
+
+    displayAllMedications = function () {
+        fetch(`http://localhost:5001/medications?&userId=${this.state.activeUser}&_sort=id&_order=desc&_expand=user`)
+            .then(r => r.json())
+            .then(medication => this.setState({medications: medication}))
+    }.bind(this)
+
+    displayAllDoctors = function () {
+        fetch(`http://localhost:5001/doctors?&userId=${this.state.activeUser}&_sort=id&_order=desc&_expand=user`)
+            .then(r => r.json())
+            .then(doctor => this.setState({doctors: doctor}))
     }.bind(this)
 
     // Function to update local storage and set activeUser state
@@ -99,7 +115,11 @@ class App extends Component {
                 case "results":
                     return <SearchResults terms={this.state.searchTerms} showView={this.showView} {...this.state.viewProps}/>
                 case "profile":
-                    return <Profile user={this.state.userProfile} />
+                    return <Profile user={this.state.userProfile} activeUser={this.state.activeUser}/>
+                case "medicine-cabinet":
+                    return <MyCabinet user={this.state.userProfile} activeUser={this.state.activeUser} displayAllMedications={this.displayAllMedications} medications={this.state.medications}/>
+                case "doctors":
+                    return <MyDoctors user={this.state.userProfile} activeUser={this.state.activeUser} displayAllDoctors={this.displayAllDoctors} doctors={this.state.doctors} />
                 case "home":
                 default:
                     return <Home activeUser={this.state.activeUser} />

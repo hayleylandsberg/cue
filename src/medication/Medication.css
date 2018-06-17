@@ -42,3 +42,12 @@
 .archive {
     height: 20px;
 }
+
+.description {
+    display: flex;
+    justify-content: space-around;
+}
+
+.underline {
+    color: #FF1503;
+}

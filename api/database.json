@@ -149,7 +149,7 @@
       "dosage": "100mg",
       "frequency": "2x Daily",
       "rxNumber": "3827394",
-      "archive": false
+      "archive": true
     },
     {
       "id": 2,
@@ -158,7 +158,7 @@
       "dosage": "500mg",
       "frequency": "1x Daily",
       "rxNumber": "32073432",
-      "archive": false
+      "archive": true
     },
     {
       "name": "Vitamin D3",
@@ -166,7 +166,7 @@
       "frequency": "1x Daily",
       "rxNumber": "8473292",
       "userId": 1,
-      "archive": false,
+      "archive": true,
       "id": 3
     },
     {
@@ -211,7 +211,7 @@
       "frequency": "1x Daily",
       "rxNumber": "4735834",
       "userId": 1,
-      "archive": false,
+      "archive": true,
       "id": 8
     }
   ]

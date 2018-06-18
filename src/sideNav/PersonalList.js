@@ -33,7 +33,7 @@ export default class PersonalList extends Component {
             image = <img className="avatarLarge" src={require('../images/avatar.png')}/>
         }
         return (
-            <div id="sideNav">
+            <div id="sideNav" className="sideNav-test">
             <div>
                 {image}
             </div>

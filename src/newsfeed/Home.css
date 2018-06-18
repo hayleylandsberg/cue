@@ -6,3 +6,7 @@
   body {
     background-color: #EEEEEE;
   }
+
+  #message {
+    border-radius: 1%;
+  }

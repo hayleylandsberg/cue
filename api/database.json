@@ -204,6 +204,15 @@
       "userId": 2,
       "archive": false,
       "id": 7
+    },
+    {
+      "name": "Allegra",
+      "dosage": "10mg",
+      "frequency": "1x Daily",
+      "rxNumber": "4735834",
+      "userId": 1,
+      "archive": false,
+      "id": 8
     }
   ]
 }

@@ -22,12 +22,15 @@
     margin-bottom: 20px;
     padding: 20px;
     width: 400px;
+    border-radius: 1%;
+    background-color: white;
 }
 
 #listOfDoctors-md {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
 }
 
 #doctor-heading-md {

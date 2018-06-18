@@ -27,6 +27,10 @@ export default class MyCabinet extends Component {
 
                 }
                 </div>
+
+            <div className="archive-list">
+                <h2>Archived Medication</h2>
+            </div>
             </div>
         )
     }

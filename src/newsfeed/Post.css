@@ -5,8 +5,10 @@
 
 .post {
     margin: 10px 0 0 0;
+    border-radius: 1%;
 }
 
 .avatar {
     width: 200px;
 }
+

@@ -6,9 +6,11 @@ import NavBar from './nav/NavBar';
 import Home from './newsfeed/Home';
 import Login from './auth/Login';
 import SearchResults from './search/SearchResults';
-import Profile from "./user/Profile"
+import Profile from "./userDiary/Profile"
 import Register from "./auth/Register"
 import RegModal from "./auth/RegModal"
+import MyDoctors from "./MyDoctors/MyDoctors";
+import MyCabinet from "./MyCabinet/MyCabinet";
 
 
 class App extends Component {
@@ -18,7 +20,10 @@ class App extends Component {
         currentView: "login",
         searchTerms: "",
         activeUser: localStorage.getItem("yakId"),
-        userProfile: localStorage.getItem("yakId")
+        userProfile: localStorage.getItem("yakId"),
+        viewProps: {},
+        medications: [],
+        doctors: []
     }
 
     // Search handler -> passed to NavBar
@@ -27,6 +32,18 @@ class App extends Component {
             searchTerms: terms,
             currentView: "results"
         })
+    }.bind(this)
+
+    displayAllMedications = function () {
+        fetch(`http://localhost:5001/medications?&userId=${this.state.activeUser}&_sort=id&_order=desc&_expand=user`)
+            .then(r => r.json())
+            .then(medication => this.setState({medications: medication}))
+    }.bind(this)
+
+    displayAllDoctors = function () {
+        fetch(`http://localhost:5001/doctors?&userId=${this.state.activeUser}&_sort=id&_order=desc&_expand=user`)
+            .then(r => r.json())
+            .then(doctor => this.setState({doctors: doctor}))
     }.bind(this)
 
     // Function to update local storage and set activeUser state
@@ -43,7 +60,7 @@ class App extends Component {
 
     // View switcher -> passed to NavBar and Login
     // Argument can be an event (via NavBar) or a string (via Login)
-    showView = function (e) {
+    showView = function (e, ...props) {
         let view = null
         let user = this.state.userProfile
         // Click event triggered switching view
@@ -67,10 +84,11 @@ class App extends Component {
                 userProfile: user
             })
         }
-
+        
         // Update state to correct view will be rendered
         this.setState({
-            currentView: view
+            currentView: view,
+            viewProps: Object.assign({}, ...props)
         })
 
     }.bind(this)
@@ -95,9 +113,13 @@ class App extends Component {
                 case "logout":
                     return <Login showView={this.showView} setActiveUser={this.setActiveUser} changeDivImage= {this.changeDivImage} />
                 case "results":
-                    return <SearchResults terms={this.state.searchTerms} showView={this.showView} />
+                    return <SearchResults terms={this.state.searchTerms} showView={this.showView} {...this.state.viewProps}/>
                 case "profile":
-                    return <Profile user={this.state.userProfile} />
+                    return <Profile user={this.state.userProfile} activeUser={this.state.activeUser}/>
+                case "medicine-cabinet":
+                    return <MyCabinet user={this.state.userProfile} activeUser={this.state.activeUser} displayAllMedications={this.displayAllMedications} medications={this.state.medications}/>
+                case "doctors":
+                    return <MyDoctors user={this.state.userProfile} activeUser={this.state.activeUser} displayAllDoctors={this.displayAllDoctors} doctors={this.state.doctors} />
                 case "home":
                 default:
                     return <Home activeUser={this.state.activeUser} />

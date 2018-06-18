@@ -1,9 +1,12 @@
 import React, { Component } from "react"
 import logo from "../images/Logo.png"
 import $ from "jquery"
-import profilepic from "../images/settings.png"
+import profilepic from "../images/menu.png"
 import "./NavBar.css"
 import exportpic from "../images/export.png"
+import medicineCabinet from "../images/medicine-box-dark.png"
+import doctor from "../images/doctor-dark.png"
+import diary from "../images/diary-dark.png"
 
 
 export default class NavBar extends Component {
@@ -40,6 +43,27 @@ export default class NavBar extends Component {
         this.setState(stateToChange)
     }
 
+    doSearch = () => {
+        const newState = {}
+        fetch(`http://localhost:5001/posts?message_like=${encodeURI(this.props.terms)}&userId=${this.props.activeUser}&_expand=user`)
+            .then(r => r.json())
+            .then(posts => {
+                newState.posts = posts
+                return fetch(`http://localhost:5001/medications?q=${encodeURI(this.props.terms)}`)
+            })
+     
+            .then(r => r.json())
+            .then(medications => {
+                newState.medications = medications
+                return fetch(`http://localhost:5001/doctors?q=${encodeURI(this.props.terms)}&userId=${this.props.activeUser}&_sort=id&_order=desc&_expand=user`)
+            })
+            .then(r => r.json())
+            .then(doctors => {
+                newState.doctors = doctors
+                this.setState(newState)
+            })
+    }
+
     render() {
         return (
             <nav className="navbar navbar-light fixed-top white flex-md-nowrap p-0 shadow">
@@ -49,7 +73,7 @@ export default class NavBar extends Component {
                 <input id="searchTerms"
                     value={this.state.searchTerms}
                     onChange={this.handleFieldChange}
-                    onKeyPress={this.search}
+                    onKeyPress={this.doSearch}
                     className="form-control w-100"
                     type="search"
                     placeholder="Search Your Cue"
@@ -81,10 +105,10 @@ export default class NavBar extends Component {
                 </ul>
                 <article className="profileMenu">
                     <section className="profileMenu__item">
-                        <div><a title="notifications" id="nav__notifications" href="#">Notifications</a></div>
-                        <div><a title="notifications" id={`nav__profile__${localStorage.getItem("yakId")}`} onClick={this.props.viewHandler} href="#">My Profile</a></div>
-                        <div><a title="notifications" id="nav__followers" href="#">My Followers</a></div>
-                        <div><a title="notifications" id="nav__friends" href="#">My Friends</a></div>
+                        <div className="menu-option"><img src={diary}></img><a title="diary" id={`nav__profile__${localStorage.getItem("yakId")}`} onClick={this.props.viewHandler} href="#"> My Diary</a></div>
+                        <div className="menu-option"><img src={medicineCabinet}></img><a title="medicine-cabinet" id={`nav__medicine-cabinet__${localStorage.getItem("yakId")}`} onClick={this.props.viewHandler} href="#"> My Medicine Cabinet</a>
+                        </div>
+                        <div className="menu-option"><img src={doctor}></img><a title="doctor" id={`nav__doctors__${localStorage.getItem("yakId")}`} onClick={this.props.viewHandler} href="#"> My Doctors</a></div>
                     </section>
                 </article>
             </nav>

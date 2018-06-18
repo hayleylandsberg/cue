@@ -68,6 +68,12 @@
       "userId": "1",
       "date": "06/13/2018, 2:25:18 PM",
       "id": 5
+    },
+    {
+      "message": "I am very fatigued today. ",
+      "userId": "1",
+      "date": "06/14/2018, 10:43:05 AM",
+      "id": 6
     }
   ],
   "doctors": [
@@ -75,6 +81,7 @@
       "id": 1,
       "userId": 1,
       "name": "Dr. Daniel Schuster",
+      "facility": "Vanderbilt Medical Center",
       "specialty": "ENT",
       "address": "100 Medical Plaza Nashville, TN 37212",
       "phoneNumber": "615-938-4372"
@@ -83,17 +90,55 @@
       "id": 2,
       "userId": 1,
       "name": "Dr. Ed Gould",
+      "facility": "Vanderbilt Medical Center",
       "specialty": "Nephrology",
       "address": "100 Medical Plaza Nashville, TN 37212",
       "phoneNumber": "615-337-4226"
     },
     {
-      "name": "Dr. Allison Baker",
+      "name": "Dr. Susan Baker",
       "specialty": "Rheumatology",
+      "facility": "Cedar Sinai Medical Center",
       "address": "300 N Beverly Drive Beverly Hills, CA 90211",
       "phoneNumber": "310-842-3928",
       "userId": 1,
       "id": 3
+    },
+    {
+      "name": "Dr. Sousan Karimi",
+      "specialty": "Nephrology",
+      "facility": "Cedar Sinai Medical Center",
+      "address": "922 W. 3rd Street Los Angles, CA 90048",
+      "phoneNumber": "310-928-3748",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "name": "Dr. Julian Martinez",
+      "specialty": "Genetics",
+      "facility": "UCLA Medical Center",
+      "address": "757 Westwood Plaza Los Angeles, CA 90095",
+      "phoneNumber": "310-938-2438",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "name": "Dr. Charles Clark",
+      "specialty": "Internal Medicine",
+      "facility": "Vanderbilt Medical Center",
+      "address": "100 Medical Plaza Nashville, TN 37212",
+      "phoneNumber": "615-332-5473",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "name": "Dr. Charles Clark",
+      "specialty": "Internal Medicine",
+      "facility": "Vanderbilt Medical Center",
+      "address": "100 Medical Plaza Nashville, TN 37212",
+      "phoneNumber": "615-332-5473",
+      "userId": 2,
+      "id": 7
     }
   ],
   "medications": [
@@ -150,6 +195,24 @@
       "userId": 1,
       "archive": false,
       "id": 6
+    },
+    {
+      "name": "Daily Vitamin",
+      "dosage": "200mg",
+      "frequency": "1x Daily",
+      "rxNumber": "832932",
+      "userId": 2,
+      "archive": false,
+      "id": 7
+    },
+    {
+      "name": "Allegra",
+      "dosage": "10mg",
+      "frequency": "1x Daily",
+      "rxNumber": "4735834",
+      "userId": 1,
+      "archive": false,
+      "id": 8
     }
   ]
 }

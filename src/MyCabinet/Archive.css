@@ -1,8 +1,8 @@
-.medication-mc {
+.archive-list {
     margin-top: 80px;
 }
 
-#medicine-heading-mc {
+#archive-heading-mc {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -12,34 +12,43 @@
     margin-bottom: 50px;
 }
 
-.medicine-mc {
-    border: 1px solid #979797;
-    margin: 10px;
-    background-color: white;
-    padding: 10px;
-    border-radius: 1%;
-}
-
-.heading-meds-mc {
+.heading-archive {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 10px;
 }
 
-.dosage-mc {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0px;
-    text-align: center;
+#archive-list {
+    overflow: auto; 
+    height: 500px;
+    margin-right: 70px;
+    margin-left: 70px;
 }
 
-.description-mc {
+.archive-description {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
     text-align: center;
 }
 
-#listOfMedications-mc {
+.archive-dosage {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.archive-meds{
+        border: 1px solid #979797;
+        margin: 10px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 1%;
+}
+
+.list-of-archived {
     overflow: auto; 
     height: 500px;
     margin-right: 70px;

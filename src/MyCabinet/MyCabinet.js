@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import Medication from "./Medication";
 import RegModal from "./RegModalMedication"
+import Archive from "./Archive"
 
 
 export default class MyCabinet extends Component {
@@ -23,13 +24,20 @@ export default class MyCabinet extends Component {
                 </div>
                 <div id="listOfMedications-mc">
                 {
-                    this.props.medications.slice(0).reverse().map(medication => <Medication key={medication.id} medication={medication} />)
+                    this.props.medications.slice(0).reverse().filter(m => m.archive === false).map(medication => <Medication key={medication.id} medication={medication} displayAllMedications={this.props.displayAllMedications}/>)
 
                 }
                 </div>
 
-            <div className="archive-list">
-                <h2>Archived Medication</h2>
+                <div className="archive-list">
+                    <div id="archive-heading-mc">
+                    <h2>Archived Medication</h2>
+                    </div>
+                    <div className="list-of-archived">
+                 {
+                    this.props.medications.slice(0).reverse().filter(m => m.archive === true).map(medication => <Archive key={medication.id} medication={medication} displayAllMedications={this.props.displayAllMedications}/>)
+                }
+                </div>
             </div>
             </div>
         )

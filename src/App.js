@@ -117,7 +117,7 @@ class App extends Component {
                 case "profile":
                     return <Profile user={this.state.userProfile} activeUser={this.state.activeUser}/>
                 case "medicine-cabinet":
-                    return <MyCabinet user={this.state.userProfile} activeUser={this.state.activeUser} displayAllMedications={this.displayAllMedications} medications={this.state.medications}/>
+                    return <MyCabinet user={this.state.userProfile} activeUser={this.state.activeUser} displayAllMedications={this.displayAllMedications} medications={this.state.medications} />
                 case "doctors":
                     return <MyDoctors user={this.state.userProfile} activeUser={this.state.activeUser} displayAllDoctors={this.displayAllDoctors} doctors={this.state.doctors} />
                 case "home":

@@ -13,7 +13,8 @@ export default class Archive extends Component {
 
     render() {
         return (
-            <div className="archive-meds">
+            <div className="archive-meds-list">
+                <div className="archive-meds">
                 <div className="heading-archive">
                     <h5>{this.props.medication.name}</h5>
                 </div>
@@ -27,6 +28,7 @@ export default class Archive extends Component {
                 <p>{this.props.medication.dosage}</p>
                 <p>{this.props.medication.frequency}</p>
                 <p>{this.props.medication.rxNumber}</p>
+                </div>
                 </div>
             </div>
             </div>

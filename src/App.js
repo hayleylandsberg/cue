@@ -34,6 +34,22 @@ class App extends Component {
         })
     }.bind(this)
 
+    resetMeds = () => {
+        this.state.medications.forEach(med => {
+            fetch(`http://localhost:5001/medications/${med.id}`, {
+                    method: "PATCH",
+                    headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            takenMeds: false
+                        })
+                    })
+                    
+                })
+            }
+    
+
     displayAllMedications = function () {
         fetch(`http://localhost:5001/medications?&userId=${this.state.activeUser}&_sort=id&_order=desc&_expand=user`)
             .then(r => r.json())
@@ -117,7 +133,7 @@ class App extends Component {
                 case "profile":
                     return <Profile user={this.state.userProfile} activeUser={this.state.activeUser}/>
                 case "medicine-cabinet":
-                    return <MyCabinet user={this.state.userProfile} activeUser={this.state.activeUser} displayAllMedications={this.displayAllMedications} medications={this.state.medications} />
+                    return <MyCabinet user={this.state.userProfile} activeUser={this.state.activeUser} displayAllMedications={this.displayAllMedications} medications={this.state.medications} resetMeds={this.resetMeds} />
                 case "doctors":
                     return <MyDoctors user={this.state.userProfile} activeUser={this.state.activeUser} displayAllDoctors={this.displayAllDoctors} doctors={this.state.doctors} />
                 case "home":

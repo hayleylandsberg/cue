@@ -155,7 +155,8 @@
       "dosage": "100mg",
       "frequency": "2x Daily",
       "rxNumber": "3827394",
-      "archive": true
+      "archive": true,
+      "takenMeds": false
     },
     {
       "id": 2,
@@ -164,7 +165,8 @@
       "dosage": "500mg",
       "frequency": "1x Daily",
       "rxNumber": "32073432",
-      "archive": true
+      "archive": false,
+      "takenMeds": false
     },
     {
       "name": "Vitamin D3",
@@ -172,8 +174,9 @@
       "frequency": "1x Daily",
       "rxNumber": "8473292",
       "userId": 1,
-      "archive": true,
-      "id": 3
+      "archive": false,
+      "id": 3,
+      "takenMeds": false
     },
     {
       "name": "Hydroxichloroquine",
@@ -182,7 +185,8 @@
       "rxNumber": "843962",
       "userId": 1,
       "archive": false,
-      "id": 4
+      "id": 4,
+      "takenMeds": false
     },
     {
       "name": "Methotrexate",
@@ -191,7 +195,8 @@
       "rxNumber": "9274099",
       "userId": 1,
       "archive": false,
-      "id": 5
+      "id": 5,
+      "takenMeds": false
     },
     {
       "name": "Vitamin A",
@@ -200,7 +205,8 @@
       "rxNumber": "849356495",
       "userId": 1,
       "archive": false,
-      "id": 6
+      "id": 6,
+      "takenMeds": false
     },
     {
       "name": "Daily Vitamin",
@@ -209,7 +215,8 @@
       "rxNumber": "832932",
       "userId": 2,
       "archive": false,
-      "id": 7
+      "id": 7,
+      "takenMeds": false
     },
     {
       "name": "Allegra",
@@ -217,8 +224,9 @@
       "frequency": "1x Daily",
       "rxNumber": "4735834",
       "userId": 1,
-      "archive": true,
-      "id": 8
+      "archive": false,
+      "id": 8,
+      "takenMeds": false
     }
   ]
 }

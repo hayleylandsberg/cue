@@ -35,6 +35,24 @@
       "emergencyName": "Hayley Landsberg",
       "emergencyNumber": "310-882-3105",
       "id": 2
+    },
+    {
+      "email": "katherine@gmail.com",
+      "password": "me",
+      "firstName": "Katherine",
+      "lastName": "Jones",
+      "city": "Nashville",
+      "state": "Tennessee",
+      "phone": "615-555-2342",
+      "age": "32",
+      "gender": "female",
+      "conditions": "Rheumatoid Arthritis",
+      "allergies": "Penicillin",
+      "pharmacyName": "Walgreens - Green Hills",
+      "pharmacyNumber": "615-555-9090",
+      "emergencyName": "Luke Jones",
+      "emergencyNumber": "615-555-3432",
+      "id": 3
     }
   ],
   "friends": [],
@@ -80,6 +98,12 @@
       "userId": "1",
       "date": "06/18/2018, 3:17:12 PM",
       "id": 7
+    },
+    {
+      "message": "Today my right index finger and wrist were hurting. On a 1 to 10 scale, I'd put my pain at a 6.",
+      "userId": 3,
+      "date": "06/19/2018, 1:54:01 PM",
+      "id": 8
     }
   ],
   "doctors": [
@@ -145,6 +169,24 @@
       "phoneNumber": "615-332-5473",
       "userId": 2,
       "id": 7
+    },
+    {
+      "name": "Dr. Erin Scholl",
+      "specialty": "Rheumatology",
+      "facility": "Vanderbilt Medical Center",
+      "address": "100 Medical Plaza Nashville, TN 37212",
+      "phoneNumber": "615-332-5473",
+      "userId": 3,
+      "id": 8
+    },
+    {
+      "name": "Dr. Frank Berry",
+      "specialty": "Internal Medicine",
+      "facility": "Vanderbilt Medical Center",
+      "address": "100 Medical Plaza Nashville, TN 37212",
+      "phoneNumber": "615-332-9282",
+      "userId": 3,
+      "id": 9
     }
   ],
   "medications": [
@@ -227,6 +269,66 @@
       "archive": false,
       "id": 8,
       "takenMeds": false
+    },
+    {
+      "name": "Test",
+      "dosage": "test",
+      "frequency": "test",
+      "rxNumber": "test",
+      "userId": 1,
+      "archive": true,
+      "takenMeds": false,
+      "id": 9
+    },
+    {
+      "name": "Methotrexate",
+      "dosage": "15mg",
+      "frequency": "1x Daily",
+      "rxNumber": "8362234",
+      "userId": 3,
+      "archive": false,
+      "takenMeds": false,
+      "id": 10
+    },
+    {
+      "name": "Plaquenil",
+      "dosage": "200mg",
+      "frequency": "2x Daily",
+      "rxNumber": "9384726",
+      "userId": 3,
+      "archive": false,
+      "takenMeds": false,
+      "id": 11
+    },
+    {
+      "name": "Vitamin B12",
+      "dosage": "500mg",
+      "frequency": "1x Daily",
+      "rxNumber": "983472",
+      "userId": 3,
+      "archive": false,
+      "takenMeds": false,
+      "id": 12
+    },
+    {
+      "name": "Vitamin D3",
+      "dosage": "2000iu",
+      "frequency": "1x Daily",
+      "rxNumber": "4859201",
+      "userId": 3,
+      "archive": false,
+      "takenMeds": false,
+      "id": 13
+    },
+    {
+      "name": "Vitamin A",
+      "dosage": "100mg",
+      "frequency": "1x Daily",
+      "rxNumber": "8437292",
+      "userId": 3,
+      "archive": false,
+      "takenMeds": false,
+      "id": 14
     }
   ]
 }

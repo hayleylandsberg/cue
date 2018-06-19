@@ -23,7 +23,10 @@ class App extends Component {
         userProfile: localStorage.getItem("yakId"),
         viewProps: {},
         medications: [],
-        doctors: []
+        doctors: [],
+        viewProps: {
+            randomizer: Date.now()
+        }
     }
 
     // Search handler -> passed to NavBar
@@ -35,19 +38,23 @@ class App extends Component {
     }.bind(this)
 
     resetMeds = () => {
+        const falseMeds = []
+
         this.state.medications.forEach(med => {
-            fetch(`http://localhost:5001/medications/${med.id}`, {
+            falseMeds.push(fetch(`http://localhost:5001/medications/${med.id}`, {
                     method: "PATCH",
                     headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            takenMeds: false
-                        })
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        takenMeds: false
                     })
-                    
                 })
-            }
+            )
+        })
+        return Promise.all(falseMeds)
+    }
+
     
 
     displayAllMedications = function () {
@@ -133,7 +140,9 @@ class App extends Component {
                 case "profile":
                     return <Profile user={this.state.userProfile} activeUser={this.state.activeUser}/>
                 case "medicine-cabinet":
-                    return <MyCabinet user={this.state.userProfile} activeUser={this.state.activeUser} displayAllMedications={this.displayAllMedications} medications={this.state.medications} resetMeds={this.resetMeds} />
+                    return <MyCabinet user={this.state.userProfile} activeUser={this.state.activeUser} displayAllMedications={this.displayAllMedications} medications={this.state.medications} resetMeds={this.resetMeds} showView = {this.showView} 
+                    key={this.state.viewProps.randomizer}
+                     />
                 case "doctors":
                     return <MyDoctors user={this.state.userProfile} activeUser={this.state.activeUser} displayAllDoctors={this.displayAllDoctors} doctors={this.state.doctors} />
                 case "home":

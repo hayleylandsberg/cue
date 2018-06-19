@@ -31,13 +31,14 @@ export default class Medication extends Component {
                         console.log("Still need to take all of your medications")
                     } else {
                         swal("Congrats!", "You have taken all your medications today! 10 points will be added to your daily streak score.", "success")
-                        this.props.resetMeds()
+                        this.props.resetMeds().then(() => {
+                            this.props.displayAllMedications()
+                        }).then(() => {
+                            this.props.showView("medicine-cabinet", { randomizer: Date.now() })
+                        })
                     }
                 })
 
-    .then(() => {
-        this.props.displayAllMedications()
-    })
 
 }
 
@@ -62,7 +63,7 @@ render() {
             <div className="whole-medication-mc">
                 <div class="center checkBox">
                     <label class="label">
-                    <input  class="label__checkbox" type="checkbox" onClick={()=> this.takenMeds(this.props.medication.id)} />
+                    <input  class="label__checkbox" type="checkbox" defaultChecked={this.props.medication.takenMeds} onClick={()=> this.takenMeds(this.props.medication.id)} />
                     <span class="label__text">
                     <span class="label__check">
                     <i class="fa fa-check icon"></i>

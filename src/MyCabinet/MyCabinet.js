@@ -27,7 +27,7 @@ export default class MyCabinet extends Component {
                 </div>
                 <div id="listOfMedications-mc">
                 {
-                    this.props.medications.slice(0).reverse().filter(m => m.archive === false).map(medication => <Medication key={medication.id} medication={medication} displayAllMedications={this.props.displayAllMedications} resetMeds={this.props.resetMeds} activeUser={this.props.activeUser} />)
+                    this.props.medications.slice(0).reverse().filter(m => m.archive === false).map(medication => <Medication key={medication.id} medication={medication} displayAllMedications={this.props.displayAllMedications} resetMeds={this.props.resetMeds} activeUser={this.props.activeUser} showView = {this.props.showView} />)
 
                 }
                 </div>

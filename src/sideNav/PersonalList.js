@@ -19,7 +19,6 @@ export default class PersonalList extends Component {
         componentDidMount(){
             fetch(`http://localhost:5001/users?id=${this.props.activeUser}`)
             .then(r => r.json()).then(userData => {
-                console.log(userData)
                 this.setState({users: userData[0]})
             })
         }
@@ -33,7 +32,7 @@ export default class PersonalList extends Component {
             image = <img className="avatarLarge" src={require('../images/avatar.png')}/>
         }
         return (
-            <div id="sideNav">
+            <div id="sideNav" className="sideNav-test">
             <div>
                 {image}
             </div>

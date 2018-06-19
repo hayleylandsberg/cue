@@ -1,5 +1,8 @@
 import React, { Component } from "react"
 import "./Medication.css"
+import "./Style.less"
+import "./Style.css"
+import swal from 'sweetalert'
 
 
 export default class Medication extends Component {
@@ -19,11 +22,58 @@ export default class Medication extends Component {
         })
     }
 
-    render() {
+
+    areMedsTaken = () => {
+        fetch(`http://localhost:5001/medications?&userId=${this.props.activeUser}&takenMeds=false&archive=false`)
+            .then(r => r.json())
+            .then(medications => {
+                    if (medications.length > 0) {
+                        console.log("Still need to take all of your medications")
+                    } else {
+                        swal("Congrats!", "You have taken all your medications today! 10 points will be added to your daily streak score.", "success")
+                        this.props.resetMeds().then(() => {
+                            this.props.displayAllMedications()
+                        }).then(() => {
+                            this.props.showView("medicine-cabinet", { randomizer: Date.now() })
+                        })
+                    }
+                })
+
+
+}
+
+    takenMeds = (medicationId) => {
+        fetch(`http://localhost:5001/medications/${medicationId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                takenMeds: true
+            })
+        })
+        .then(()=> {
+            this.areMedsTaken()
+        })
+    }
+
+render() {
         return (
             <div className="medicine-mc">
+            <div className="whole-medication-mc">
+                <div class="center checkBox">
+                    <label class="label">
+                    <input  class="label__checkbox" type="checkbox" defaultChecked={this.props.medication.takenMeds} onClick={()=> this.takenMeds(this.props.medication.id)} />
+                    <span class="label__text">
+                    <span class="label__check">
+                    <i class="fa fa-check icon"></i>
+                    </span>
+                    </span>
+                    </label>
+                </div>
+            <div className="fullMeds-mc">
                 <div className="heading-meds">
-                    <h5>{this.props.medication.name}</h5>
+                    <h4>{this.props.medication.name}</h4>
                     <img className="archive" onClick={()=> this.archive(this.props.medication.id)} src={require('../images/archive.png')}></img>
                 </div>
                 <div className="description">
@@ -36,6 +86,8 @@ export default class Medication extends Component {
                 <p>{this.props.medication.frequency}</p>
                 <p>{this.props.medication.rxNumber}</p>
                 </div>
+            </div>
+            </div>
             </div>
         )
     }

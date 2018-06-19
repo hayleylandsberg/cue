@@ -1,5 +1,6 @@
 .medication-mc {
     margin-top: 80px;
+    margin-left: 300px;
 }
 
 #medicine-heading-mc {
@@ -44,4 +45,16 @@
     height: 500px;
     margin-right: 70px;
     margin-left: 70px;
+}
+
+.whole-medication-mc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.fullMeds-mc {
+    width: 1500px;
+    margin-right: 20px;
+    margin-left: 20px;
 }

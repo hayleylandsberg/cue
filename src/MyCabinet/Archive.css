@@ -1,5 +1,5 @@
 .archive-list {
-    margin-top: 80px;
+    margin-top: 30px;
 }
 
 #archive-heading-mc {
@@ -40,13 +40,14 @@
     text-align: center;
 }
 
-.archive-meds{
-        border: 1px solid #979797;
-        margin: 10px;
-        background-color: white;
-        padding: 10px;
-        border-radius: 1%;
+.archive-meds-list{
+    border: 1px solid #979797;
+    margin: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 1%;
 }
+
 
 .list-of-archived {
     overflow: auto; 

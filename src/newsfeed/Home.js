@@ -63,12 +63,17 @@ export default class Home extends Component {
 
 render() {
     return (
-        <div className="container-full">
+        <div className="hi">
+        {/* container-full */}
             <div className="row">
-                <div className="col col-sm-3">
+                <div className="personal-list">
+                {/* col-sm-3 */}
                     <PersonalList activeUser={this.props.activeUser} />
                 </div>
-                <div className="col content col-sm-6">
+
+                <div className="container-full flex-home">
+                <div className="diary-newsfeed col content col-sm-6">
+                {/* col-sm-6 */}
                     <div className="newsfeed">
                         <form>
                             <div className="form-group">
@@ -85,12 +90,14 @@ render() {
                         <PostList posts={this.state.posts} activeUser={this.props.activeUser} />
                     </div>
                 </div>
-                <div className="col col-sm-3">
+                <div className="med-doc-list col col-sm-3">
+                {/* col-sm-3 */}
                     <div>
                         <MedicationList activeUser={this.props.activeUser} displayAllMedications={this.displayAllMedications} medications={this.state.medications}/>
                     </div>
                     <div>
                         <DoctorList activeUser={this.props.activeUser} displayAllDoctors={this.displayAllDoctors} doctors={this.state.doctors}/>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -22,7 +22,9 @@ export default class Register extends Component {
         email: "",
         st: "",
         city: "",
+        phone: "",
         age: "",
+        gender: "",
         conditions: "",
         allergies: "",
         pharmacyName: "",
@@ -52,7 +54,9 @@ export default class Register extends Component {
                 lastName: this.state.lastName,
                 city: this.state.city,
                 state: this.state.st,
+                phone: this.state.phone,
                 age: this.state.age,
+                gender: this.state.gender,
                 conditions: this.state.conditions,
                 allergies: this.state.allergies,
                 pharmacyName: this.state.pharmacyName,
@@ -96,7 +100,7 @@ export default class Register extends Component {
             <label htmlFor="inputAge" className="sr-only">Age</label>
             <input onChange={this.handleFieldChange} type="age" id="age" className="form-control" placeholder="Age" required="" />
             <label htmlFor="inputGender" className="sr-only">Gender</label>
-            <input onChange={this.handleFieldChange} type="Gender" id="gender" className="form-control" placeholder="Gender: female / male" required="" autoFocus="" />
+            <input onChange={this.handleFieldChange} type="gender" id="gender" className="form-control" placeholder="Gender: female / male" required="" autoFocus="" />
             <label htmlFor="inputConditions" className="sr-only">Conditions</label>
             <input onChange={this.handleFieldChange} type="conditions" id="conditions" className="form-control" placeholder="Conditions" required="" />
             <label htmlFor="inputAllergies" className="sr-only">Allergies</label>

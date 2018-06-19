@@ -22,7 +22,8 @@ export default class AddMedication extends Component {
         frequency: "",
         rxNumber: "",
         userId: "",
-        archive: false
+        archive: false,
+        takenMeds: false
 
     }
 
@@ -47,7 +48,8 @@ export default class AddMedication extends Component {
                 frequency: this.state.frequency,
                 rxNumber: this.state.rxNumber,
                 userId: parseInt(this.activeUser),
-                archive: false
+                archive: false,
+                takenMeds: false
             })
         })
 

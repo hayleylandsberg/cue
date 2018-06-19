@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Medication from "./Medication";
 import RegModal from "./RegModalMedication"
 import Archive from "./Archive"
+import PersonalList from "../sideNav/PersonalList"
 
 
 export default class MyCabinet extends Component {
@@ -16,6 +17,8 @@ export default class MyCabinet extends Component {
 
     render() {
         return (
+            <div>
+                <PersonalList activeUser={this.props.activeUser} />
             <div className="medication-mc">
                 <div id="medicine-heading-mc">
                 <h1>Medicine Cabinet</h1>
@@ -24,7 +27,7 @@ export default class MyCabinet extends Component {
                 </div>
                 <div id="listOfMedications-mc">
                 {
-                    this.props.medications.slice(0).reverse().filter(m => m.archive === false).map(medication => <Medication key={medication.id} medication={medication} displayAllMedications={this.props.displayAllMedications}/>)
+                    this.props.medications.slice(0).reverse().filter(m => m.archive === false).map(medication => <Medication key={medication.id} medication={medication} displayAllMedications={this.props.displayAllMedications} resetMeds={this.props.resetMeds} activeUser={this.props.activeUser} showView = {this.props.showView} />)
 
                 }
                 </div>
@@ -38,6 +41,7 @@ export default class MyCabinet extends Component {
                     this.props.medications.slice(0).reverse().filter(m => m.archive === true).map(medication => <Archive key={medication.id} medication={medication} displayAllMedications={this.props.displayAllMedications}/>)
                 }
                 </div>
+            </div>
             </div>
             </div>
         )

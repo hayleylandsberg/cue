@@ -55,7 +55,7 @@
       "id": 3
     }
   ],
-  "friends": [],
+  "appointments": [],
   "posts": [
     {
       "message": "This morning I have felt light headed and have had a lot of right ear pain.",
@@ -104,6 +104,24 @@
       "userId": 3,
       "date": "06/19/2018, 1:54:01 PM",
       "id": 8
+    },
+    {
+      "message": "My knees are extremely swollen today. I took 2 Advil at 8AM this morning.",
+      "userId": "3",
+      "date": "06/20/2018, 3:34:28 PM",
+      "id": 9
+    },
+    {
+      "message": "Realized I forgot to take my Plaquenil yesterday. Have doubled up today.",
+      "userId": 3,
+      "date": "06/20/2018, 8:19:05 PM",
+      "id": 10
+    },
+    {
+      "message": "Today I have a bad headache.",
+      "userId": 3,
+      "date": "06/21/2018, 9:17:59 AM",
+      "id": 11
     }
   ],
   "doctors": [
@@ -271,16 +289,6 @@
       "takenMeds": false
     },
     {
-      "name": "Test",
-      "dosage": "test",
-      "frequency": "test",
-      "rxNumber": "test",
-      "userId": 1,
-      "archive": true,
-      "takenMeds": false,
-      "id": 9
-    },
-    {
       "name": "Methotrexate",
       "dosage": "15mg",
       "frequency": "1x Daily",
@@ -309,26 +317,6 @@
       "archive": false,
       "takenMeds": false,
       "id": 12
-    },
-    {
-      "name": "Vitamin D3",
-      "dosage": "2000iu",
-      "frequency": "1x Daily",
-      "rxNumber": "4859201",
-      "userId": 3,
-      "archive": false,
-      "takenMeds": false,
-      "id": 13
-    },
-    {
-      "name": "Vitamin A",
-      "dosage": "100mg",
-      "frequency": "1x Daily",
-      "rxNumber": "8437292",
-      "userId": 3,
-      "archive": false,
-      "takenMeds": false,
-      "id": 14
     }
   ]
 }

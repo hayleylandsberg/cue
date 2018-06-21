@@ -23,7 +23,7 @@ export default class Register extends Component {
         st: "",
         city: "",
         phone: "",
-        age: "",
+        birthDate: "",
         gender: "",
         conditions: "",
         allergies: "",
@@ -55,7 +55,7 @@ export default class Register extends Component {
                 city: this.state.city,
                 state: this.state.st,
                 phone: this.state.phone,
-                age: this.state.age,
+                birthDate: this.state.birthDate,
                 gender: this.state.gender,
                 conditions: this.state.conditions,
                 allergies: this.state.allergies,
@@ -97,8 +97,8 @@ export default class Register extends Component {
             <input onChange={this.handleFieldChange} type="phone" id="phone" className="form-control" placeholder="Phone Number" required="" autoFocus="" />
             </div>
             <div id="secondFormDiv">
-            <label htmlFor="inputAge" className="sr-only">Age</label>
-            <input onChange={this.handleFieldChange} type="age" id="age" className="form-control" placeholder="Age" required="" />
+            <label htmlFor="inputBirthdate" className="sr-only">Birthdate</label>
+            <input onChange={this.handleFieldChange} type="birthDate" id="birthDate" className="form-control" placeholder="Birthday yyyy-mm-dd" required="" />
             <label htmlFor="inputGender" className="sr-only">Gender</label>
             <input onChange={this.handleFieldChange} type="gender" id="gender" className="form-control" placeholder="Gender: female / male" required="" autoFocus="" />
             <label htmlFor="inputConditions" className="sr-only">Conditions</label>

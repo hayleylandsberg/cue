@@ -8,12 +8,9 @@ export default class PersonalList extends Component {
             }
         }
 
-        gender = () => {
-            // if (this.state.users.gender === "female") {
-            //     <img className="avatarLarge" src={require('../images/avatar1.png')}/>
-            // } else {
-            //     return <img className="avatarLarge" src={require('../images/avatar.png')}/>
-            // }
+        age = (birthDate) => {
+            let age = (new Date()).getFullYear() - parseInt(birthDate);
+            return age
         }
     
         componentDidMount(){
@@ -42,7 +39,7 @@ export default class PersonalList extends Component {
             </div>
             <div id="personalInfo" className="info">
                 <h5>Personal Information</h5>
-                <p>Age: {this.state.users.age}</p>
+                <p>Age: {this.age(this.state.users.birthDate)}</p>
                 <h6>Medical Conditions</h6>
                 <p>{this.state.users.conditions}</p>
                 <h6>Allergies</h6>

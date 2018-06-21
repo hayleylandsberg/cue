@@ -1,34 +1,9 @@
 import React, { Component } from "react"
 import "./Doctors.css"
+import AppointmentRegModal from "./AppointmentRegModal"
 
 
 export default class Doctor extends Component {
-
-    state={
-        appointments: {
-        doctorName: "",
-        doctorSpecialty: "",
-        doctorFacility: "",
-        doctorAddress: "",
-        doctorPhone: ""
-        }
-
-    }
-    appointment = (doctorId) => {
-        fetch(`http://localhost:5001/appointments`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                doctorName: this.props.doctor.name,
-                doctorSpecialty: this.props.doctor.specialty,
-                doctorFacility: this.props.doctor.facility,
-                doctorAddress: this.props.doctor.address,
-                doctorPhone: this.props.doctor.phoneNumber
-            })
-        }).then(()=> {this.props.displayAllAppointments})
-    }
         
     deleteDoctor = (doctorId) => {
         fetch(`http://localhost:5001/doctors/${doctorId}`, {
@@ -60,7 +35,7 @@ export default class Doctor extends Component {
                         <p>{this.props.doctor.phoneNumber}</p>
                     </div>
                     <div>
-                        <img className="calendar-icon" src={require('../images/calendar.png')} onClick={()=> this.appointment(this.props.doctor.id)}></img>
+                        <AppointmentRegModal doctor={this.props.doctor} displayAllAppointments={this.props.displayAllAppointments} appointments={this.props.appointments}/>
                     </div>
                 </div>
             </div>

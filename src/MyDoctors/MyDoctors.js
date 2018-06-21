@@ -26,7 +26,7 @@ export default class MyDoctors extends Component {
                 </div>
                 <div id="listOfDoctors-md">
                 {
-                    this.props.doctors.slice(0).reverse().map(doctor => <Doctor key={doctor.id} doctor={doctor} displayAllAppointments={this.props.displayAllAppointments} />)
+                    this.props.doctors.slice(0).reverse().map(doctor => <Doctor key={doctor.id} doctor={doctor} displayAllAppointments={this.props.displayAllAppointments} displayAllDoctors={this.props.displayAllDoctors}/>)
                 }
                 </div>
                 <div>

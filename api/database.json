@@ -8,7 +8,7 @@
       "address": "1937 Kimbark Drive",
       "city": "Nashville",
       "state": "Tennessee",
-      "age": "28",
+      "birthDate": "1990-01-25",
       "gender": "female",
       "conditions": "test-condition",
       "allergies": "Penicillin",
@@ -26,7 +26,7 @@
       "address": "1937 Kimbark Drive",
       "city": "Nashville",
       "state": "TN",
-      "age": "30",
+      "birthDate": "1988-04-17",
       "gender": "male",
       "conditions": "High Blood Pressue",
       "allergies": "Bees",
@@ -44,7 +44,7 @@
       "city": "Nashville",
       "state": "Tennessee",
       "phone": "615-555-2342",
-      "age": "32",
+      "birthDate": "1986-05-03",
       "gender": "female",
       "conditions": "Rheumatoid Arthritis",
       "allergies": "Penicillin",
@@ -55,7 +55,71 @@
       "id": 3
     }
   ],
-  "appointments": [],
+  "appointments": [
+    {
+      "userId": 1,
+      "appointmentTime": "01:00",
+      "appointmentDate": "2018-06-29",
+      "doctorId": 1,
+      "id": 1
+    },
+    {
+      "userId": 3,
+      "appointmentTime": "13:00",
+      "appointmentDate": "2018-06-30",
+      "doctorId": 9,
+      "id": 2
+    },
+    {
+      "userId": 3,
+      "appointmentTime": "15:00",
+      "appointmentDate": "2018-06-24",
+      "doctorId": 8,
+      "id": 3
+    },
+    {
+      "userId": 3,
+      "appointmentTime": "13:00",
+      "appointmentDate": "2018-08-16",
+      "doctorId": 8,
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "appointmentTime": "22:59",
+      "appointmentDate": "2018-06-22",
+      "doctorId": 8,
+      "id": 5
+    },
+    {
+      "userId": 3,
+      "appointmentTime": "",
+      "appointmentDate": "",
+      "doctorId": 8,
+      "id": 6
+    },
+    {
+      "userId": 3,
+      "appointmentTime": "",
+      "appointmentDate": "",
+      "doctorId": 8,
+      "id": 7
+    },
+    {
+      "userId": 3,
+      "appointmentTime": "",
+      "appointmentDate": "",
+      "doctorId": 8,
+      "id": 8
+    },
+    {
+      "userId": 3,
+      "appointmentTime": "",
+      "appointmentDate": "",
+      "doctorId": 8,
+      "id": 9
+    }
+  ],
   "posts": [
     {
       "message": "This morning I have felt light headed and have had a lot of right ear pain.",
@@ -307,16 +371,6 @@
       "archive": false,
       "takenMeds": false,
       "id": 11
-    },
-    {
-      "name": "Vitamin B12",
-      "dosage": "500mg",
-      "frequency": "1x Daily",
-      "rxNumber": "983472",
-      "userId": 3,
-      "archive": false,
-      "takenMeds": false,
-      "id": 12
     }
   ]
 }

@@ -65,3 +65,12 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+#contact-calendar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar-icon {
+    margin-top: 20px;
+}

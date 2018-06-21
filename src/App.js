@@ -75,6 +75,7 @@ class App extends Component {
             .then(r => r.json())
             .then(appointment => this.setState({appointments: appointment}))
     }.bind(this)
+    
     // Function to update local storage and set activeUser state
     setActiveUser = (val) => {
         if (val) {

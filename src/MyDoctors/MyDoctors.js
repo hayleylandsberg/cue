@@ -14,6 +14,7 @@ export default class MyDoctors extends Component {
 
     componentDidMount () {
         this.props.displayAllDoctors()
+        this.props.displayAllAppointments()
     }
 
     render() {
@@ -26,16 +27,16 @@ export default class MyDoctors extends Component {
                 </div>
                 <div id="listOfDoctors-md">
                 {
-                    this.props.doctors.slice(0).reverse().map(doctor => <Doctor key={doctor.id} doctor={doctor} displayAllAppointments={this.props.displayAllAppointments} />)
+                    this.props.doctors.slice(0).reverse().map(doctor => <Doctor key={doctor.id} doctor={doctor} displayAllAppointments={this.props.displayAllAppointments} displayAllDoctors={this.props.displayAllDoctors} appointments={this.props.appointments} />)
                 }
                 </div>
                 <div>
                 <h3 className="appointment-heading-md">Your Appointments</h3>
-                {/* <div id="listOfAppointments-md">
+                <div id="listOfAppointments-md">
                 {
-                    this.props.appointments.slice(0).reverse().map(appointment => <Appointments key={appointments.id} appointment={appointment} displayAllAppointments={this.props.displayAllAppointments} />)
+                    this.props.appointments.slice(0).reverse().map(appointment => <Appointments key={appointment.id} appointments={appointment} displayAllAppointments={this.props.displayAllAppointments} />)
                 }
-                </div> */}
+                </div>
                 </div>
             </div>
             </div>

@@ -7,6 +7,21 @@ export default class Archive extends Component {
         medications: this.props.medications
     }
 
+    deleteArchived = (medicationId) => {
+        fetch(`http://localhost:5001/medications/${medicationId}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                
+            })
+        })
+        .then(() => {
+            this.props.displayAllMedications()
+        })
+    }
+
     componentDidMount () {
         this.props.displayAllMedications()
     }
@@ -17,6 +32,7 @@ export default class Archive extends Component {
                 <div className="archive-meds">
                 <div className="heading-archive">
                     <h5>{this.props.medication.name}</h5>
+                    <img className="delete" src={require('../images/close.png')}onClick={()=> this.deleteArchived(this.props.medication.id)}></img>
                 </div>
                 <div id="listOfArchived-mc">
                 <div className="archive-description">

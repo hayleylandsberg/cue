@@ -24,6 +24,7 @@ class App extends Component {
         viewProps: {},
         medications: [],
         doctors: [],
+        appointments: [],
         viewProps: {
             randomizer: Date.now()
         }
@@ -69,6 +70,11 @@ class App extends Component {
             .then(doctor => this.setState({doctors: doctor}))
     }.bind(this)
 
+    displayAllAppointments = function () {
+        fetch(`http://localhost:5001/appointments?&userId=${this.state.activeUser}&_sort=id&_order=desc&_expand=user`)
+            .then(r => r.json())
+            .then(appointment => this.setState({appointments: appointment}))
+    }.bind(this)
     // Function to update local storage and set activeUser state
     setActiveUser = (val) => {
         if (val) {
@@ -144,7 +150,7 @@ class App extends Component {
                     key={this.state.viewProps.randomizer}
                      />
                 case "doctors":
-                    return <MyDoctors user={this.state.userProfile} activeUser={this.state.activeUser} displayAllDoctors={this.displayAllDoctors} doctors={this.state.doctors} />
+                    return <MyDoctors user={this.state.userProfile} activeUser={this.state.activeUser} displayAllDoctors={this.displayAllDoctors} doctors={this.state.doctors} displayAllAppointments={this.displayAllAppointments} appointments={this.state.appointments}/>
                 case "home":
                 default:
                     return <Home activeUser={this.state.activeUser} />

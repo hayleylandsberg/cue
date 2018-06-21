@@ -2,12 +2,14 @@ import React, { Component } from "react"
 import Doctor from "./Doctor";
 import RegModal from "./RegModalDoctor"
 import PersonalList from "../sideNav/PersonalList"
+import Appointments from "./Appointments"
 
 
 export default class MyDoctors extends Component {
 
     state = {
-        doctors: this.props.doctors
+        doctors: this.props.doctors,
+        appointments: this.props.appointments
     }
 
     componentDidMount () {
@@ -24,8 +26,16 @@ export default class MyDoctors extends Component {
                 </div>
                 <div id="listOfDoctors-md">
                 {
-                    this.props.doctors.slice(0).reverse().map(doctor => <Doctor key={doctor.id} doctor={doctor} />)
+                    this.props.doctors.slice(0).reverse().map(doctor => <Doctor key={doctor.id} doctor={doctor} displayAllAppointments={this.props.displayAllAppointments} />)
                 }
+                </div>
+                <div>
+                <h3 className="appointment-heading-md">Your Appointments</h3>
+                {/* <div id="listOfAppointments-md">
+                {
+                    this.props.appointments.slice(0).reverse().map(appointment => <Appointments key={appointments.id} appointment={appointment} displayAllAppointments={this.props.displayAllAppointments} />)
+                }
+                </div> */}
                 </div>
             </div>
             </div>

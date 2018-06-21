@@ -14,6 +14,47 @@ export default class SearchResults extends Component {
         medications: []
     }
 
+    showProfile = (e) => {
+        const id = e.target.id.split("--")[1]
+        this.props.showView("profile", {userId: id})
+    }
+
+    render() {
+        return (
+            <div className="searchResults">
+                <h1>Search Results</h1>
+                {
+                    this.props.foundItems.posts.map(p =>
+                        <div className="card post" key={p.id}>
+                            <div className="card-body">
+                                <h5 className="card-title">By {p.user.name}</h5>
+                                <p className="card-text">
+                                    {p.message}
+                                </p>
+                                <a href="#" className="btn btn-outline-success">Like</a>
+                            </div>
+                        </div>
+                    )
+                }
+
+                {
+                    this.props.foundItems.users.map(u =>
+                        <div className="card post" key={u.id}>
+                            <img className="card-img-top avatar" src={Avatar} alt="Generic person image" />
+                            <div className="card-body">
+                                <h5 className="card-title">{u.name}</h5>
+                                <a href="#" onClick={this.showProfile}
+                                   id={`user--${u.id}`}
+                                   className="btn btn-outline-success">View profile</a>
+                            </div>
+                        </div>
+                    )
+                }
+            </div>
+        )
+    }
+}
+
     // shouldComponentUpdate(nextProps, nextState){
     //     return this.props.terms !== nextProps.terms
     // }
@@ -38,60 +79,60 @@ export default class SearchResults extends Component {
     //         })
     // }
 
-    render() {
+//     render() {
 
-        return (
-            <div className="searchResults">
-                <h1>Search Results for {`"${this.props.terms}"`}</h1>
+//         return (
+//             <div className="searchResults">
+//                 <h1>Search Results for {`"${this.props.terms}"`}</h1>
 
-                {
-                    this.state.posts.map(p =>
-                        <div className="card post" key={p.id}>
-                            <div className="card-body">
-                                <h5 className="card-title">{p.user.firstName} {p.user.lastName}</h5>
-                                <p className="card-text">
-                                    {p.message}
-                                </p>
-                                <a href="#" className="btn btn-outline-success">Edit</a>
-                            </div>
-                        </div>
-                    )
-                }
+//                 {
+//                     this.state.posts.map(p =>
+//                         <div className="card post" key={p.id}>
+//                             <div className="card-body">
+//                                 <h5 className="card-title">{p.user.firstName} {p.user.lastName}</h5>
+//                                 <p className="card-text">
+//                                     {p.message}
+//                                 </p>
+//                                 <a href="#" className="btn btn-outline-success">Edit</a>
+//                             </div>
+//                         </div>
+//                     )
+//                 }
 
-                {
-                    this.state.medications.map(m =>
-                        <div className="card post" key={m.id}>
-                            {/* {image} */}
-                            <div className="card-body">
-                                <h5 className="card-title">{m.name}</h5>
-                                <div className="card-info">
-                                <p>{m.dosage}</p> 
-                                <p>{m.frequency}</p> 
-                                <p>{m.rxNumber}</p>
-                            </div>
-                                <a href="#" className="btn btn-outline-success" id={`results__profile__${m.id}`} onClick={this.props.showView}>View Medicine Cabinet</a>
-                            </div>
-                        </div>
-                    )
-                }
+//                 {
+//                     this.state.medications.map(m =>
+//                         <div className="card post" key={m.id}>
+//                             {/* {image} */}
+//                             <div className="card-body">
+//                                 <h5 className="card-title">{m.name}</h5>
+//                                 <div className="card-info">
+//                                 <p>{m.dosage}</p> 
+//                                 <p>{m.frequency}</p> 
+//                                 <p>{m.rxNumber}</p>
+//                             </div>
+//                                 <a href="#" className="btn btn-outline-success" id={`results__profile__${m.id}`} onClick={this.props.showView}>View Medicine Cabinet</a>
+//                             </div>
+//                         </div>
+//                     )
+//                 }
 
-                {
-                    this.state.doctors.map(d =>
-                        <div className="card post" key={d.id}>
-                            {/* {image} */}
-                            <div className="card-body">
-                                <h5 className="card-title">{d.name}</h5>
-                                <div className="card-info-doc">
-                                <p>{d.specialty}</p> 
-                                <p>{d.address}</p> 
-                                <p>{d.phoneNumber}</p>
-                            </div>
-                                <a href="#" className="btn btn-outline-success" id={`results__profile__${d.id}`} onClick={this.props.showView}>See All Doctors</a>
-                            </div>
-                        </div>
-                    )
-                }
-            </div>
-        )
-    }
-}
+//                 {
+//                     this.state.doctors.map(d =>
+//                         <div className="card post" key={d.id}>
+//                             {/* {image} */}
+//                             <div className="card-body">
+//                                 <h5 className="card-title">{d.name}</h5>
+//                                 <div className="card-info-doc">
+//                                 <p>{d.specialty}</p> 
+//                                 <p>{d.address}</p> 
+//                                 <p>{d.phoneNumber}</p>
+//                             </div>
+//                                 <a href="#" className="btn btn-outline-success" id={`results__profile__${d.id}`} onClick={this.props.showView}>See All Doctors</a>
+//                             </div>
+//                         </div>
+//                     )
+//                 }
+//             </div>
+//         )
+//     }
+// }

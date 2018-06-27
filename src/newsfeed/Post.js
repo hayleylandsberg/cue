@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import "./Post.css"
+import RegModalPost from "./RegModalPost"
 
 /**
  * TODOs:
@@ -18,7 +19,8 @@ export default class Post extends Component {
                     <p className="card-text">
                         {this.props.post.message}
                     </p>
-                    <a href="#" className="btn btn-outline-success">Edit</a>
+                    <RegModalPost post={this.props.post}/>
+                    {/* <a href="#" className="btn btn-outline-success" onClick={this.editPost()}>Edit</a> */}
                 </div>
             </div>
         )

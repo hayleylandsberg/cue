@@ -48,7 +48,12 @@ export default class AddAppointment extends Component {
                 userId: parseInt(this.activeUser),
                 appointmentTime: this.state.appointmentTime,
                 appointmentDate: this.state.appointmentDate,
-                doctorId: this.props.doctor.id
+                doctorId: this.props.doctor.id,
+                doctorName: this.props.doctor.name,
+                doctorSpecialty: this.props.doctor.specialty,
+                doctorFacility: this.props.doctor.facility,
+                doctorAddress: this.props.doctor.address,
+                doctorPhone: this.props.doctor.phoneNumber
             })
         })
 

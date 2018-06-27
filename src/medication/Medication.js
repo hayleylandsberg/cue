@@ -40,7 +40,7 @@ export default class Medication extends Component {
         return (
             <div className="medicine">
                 <div className="heading-meds">
-    <div class="center checkBox">
+    {/* <div class="center checkBox">
   <label class="label">
     <input  class="label__checkbox" type="checkbox" onClick={()=> this.takenMeds(this.props.medication.id)} />
     <span class="label__text">
@@ -49,7 +49,7 @@ export default class Medication extends Component {
       </span>
     </span>
   </label>
-</div>
+</div> */}
                     <h5>{this.props.medication.name}</h5>
                     <img className="archive" onClick={()=> this.archive(this.props.medication.id)} src={require('../images/archive.png')}></img>
                 </div>

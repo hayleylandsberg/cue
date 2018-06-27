@@ -57,67 +57,16 @@
   ],
   "appointments": [
     {
-      "userId": 1,
-      "appointmentTime": "01:00",
-      "appointmentDate": "2018-06-29",
-      "doctorId": 1,
-      "id": 1
-    },
-    {
       "userId": 3,
-      "appointmentTime": "13:00",
-      "appointmentDate": "2018-06-30",
+      "appointmentTime": "13:20",
+      "appointmentDate": "2018-08-11",
       "doctorId": 9,
-      "id": 2
-    },
-    {
-      "userId": 3,
-      "appointmentTime": "15:00",
-      "appointmentDate": "2018-06-24",
-      "doctorId": 8,
-      "id": 3
-    },
-    {
-      "userId": 3,
-      "appointmentTime": "13:00",
-      "appointmentDate": "2018-08-16",
-      "doctorId": 8,
-      "id": 4
-    },
-    {
-      "userId": 3,
-      "appointmentTime": "22:59",
-      "appointmentDate": "2018-06-22",
-      "doctorId": 8,
-      "id": 5
-    },
-    {
-      "userId": 3,
-      "appointmentTime": "",
-      "appointmentDate": "",
-      "doctorId": 8,
-      "id": 6
-    },
-    {
-      "userId": 3,
-      "appointmentTime": "",
-      "appointmentDate": "",
-      "doctorId": 8,
-      "id": 7
-    },
-    {
-      "userId": 3,
-      "appointmentTime": "",
-      "appointmentDate": "",
-      "doctorId": 8,
-      "id": 8
-    },
-    {
-      "userId": 3,
-      "appointmentTime": "",
-      "appointmentDate": "",
-      "doctorId": 8,
-      "id": 9
+      "doctorName": "Dr. Frank Berry",
+      "doctorSpecialty": "Internal Medicine",
+      "doctorFacility": "Vanderbilt Medical Center",
+      "doctorAddress": "100 Medical Plaza Nashville, TN 37212",
+      "doctorPhone": "615-332-9282",
+      "id": 1
     }
   ],
   "posts": [
@@ -186,6 +135,12 @@
       "userId": 3,
       "date": "06/21/2018, 9:17:59 AM",
       "id": 11
+    },
+    {
+      "message": "",
+      "userId": 3,
+      "date": "06/21/2018, 5:43:52 PM",
+      "id": 12
     }
   ],
   "doctors": [
@@ -371,6 +326,26 @@
       "archive": false,
       "takenMeds": false,
       "id": 11
+    },
+    {
+      "name": "Vitamin D3",
+      "dosage": "2000iu",
+      "frequency": "1x Daily",
+      "rxNumber": "2434242",
+      "userId": 3,
+      "archive": true,
+      "takenMeds": false,
+      "id": 12
+    },
+    {
+      "name": "Vitamin D3",
+      "dosage": "2000iu",
+      "frequency": "2x Daily",
+      "rxNumber": "34234242",
+      "userId": 3,
+      "archive": false,
+      "takenMeds": false,
+      "id": 13
     }
   ]
 }

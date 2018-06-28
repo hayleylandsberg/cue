@@ -23,6 +23,7 @@ class App extends Component {
         userProfile: localStorage.getItem("yakId"),
         viewProps: {},
         medications: [],
+        posts: [],
         doctors: [],
         appointments: [],
         viewProps: {
@@ -55,8 +56,6 @@ class App extends Component {
         })
         return Promise.all(falseMeds)
     }
-
-    
 
     displayAllMedications = function () {
         fetch(`http://localhost:5001/medications?&userId=${this.state.activeUser}&_sort=id&_order=desc&_expand=user`)
@@ -145,7 +144,7 @@ class App extends Component {
                 case "results":
                     return <SearchResults terms={this.state.searchTerms} showView={this.showView} {...this.state.viewProps}/>
                 case "profile":
-                    return <Profile user={this.state.userProfile} activeUser={this.state.activeUser}/>
+                    return <Profile user={this.state.userProfile} activeUser={this.state.activeUser} posts={this.state.posts}/>
                 case "medicine-cabinet":
                     return <MyCabinet user={this.state.userProfile} activeUser={this.state.activeUser} displayAllMedications={this.displayAllMedications} medications={this.state.medications} resetMeds={this.resetMeds} showView = {this.showView} 
                     key={this.state.viewProps.randomizer}

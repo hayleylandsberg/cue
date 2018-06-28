@@ -19,7 +19,7 @@ export default class Post extends Component {
                     <p className="card-text">
                         {this.props.post.message}
                     </p>
-                    <RegModalPost post={this.props.post}/>
+                    {/* <RegModalPost post={this.props.post}/> */}
                     {/* <a href="#" className="btn btn-outline-success" onClick={this.editPost()}>Edit</a> */}
                 </div>
             </div>

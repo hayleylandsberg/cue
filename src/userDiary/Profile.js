@@ -9,6 +9,18 @@ export default class Profile extends Component{
         posts: []
     }
 
+
+    displayAllPosts = function () {
+        return fetch(`http://localhost:5001/posts?&userId=${this.props.activeUser}&_sort=id&_order=desc&_expand=user`)
+    .then(r => r.json())
+    .then(posts => {
+        this.setState({
+            message: "",
+            posts: posts
+        })
+    })
+}.bind(this)
+
     postMessage = (text) => fetch("http://localhost:5001/posts", {
         method: "POST",
         headers: {
@@ -61,7 +73,7 @@ render() {
                             <button type="button" onClick={this.postMessage} className="btn btn-info btn-lg">Log</button>
                         </form>
 
-                        <DiaryList posts={this.state.posts} activeUser={this.props.activeUser} />
+                        <DiaryList posts={this.state.posts} activeUser={this.props.activeUser} displayAllPosts={this.displayAllPosts}/>
                     </div>
                     </div>
                     </div>

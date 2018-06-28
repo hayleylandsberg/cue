@@ -64,6 +64,10 @@ export default class NavBar extends Component {
             })
     }
 
+    exportPage = () => {
+        window.print()
+    }
+
     render() {
         return (
             <nav className="navbar navbar-light fixed-top white flex-md-nowrap p-0 shadow">
@@ -93,7 +97,7 @@ export default class NavBar extends Component {
                         <a className="nav-link" id="nav__export"
                             /* onClick={this.props.viewHandler}*/ href="#">
                             <img id="navimg__export"
-                                 onClick={()=>$("#").slideToggle(333)}
+                                 onClick={this.exportPage}
                                  src={exportpic} style={{ height: `30px` }} />
                         </a>
                     </li>

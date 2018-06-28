@@ -15,3 +15,8 @@
     display: flex;
     justify-content: center;
 }
+
+.date-close {
+    display: flex;
+    justify-content: space-between;
+}

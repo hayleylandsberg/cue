@@ -51,7 +51,7 @@ export default class Medication extends Component {
   </label>
 </div> */}
                     <h5>{this.props.medication.name}</h5>
-                    <img className="archive" onClick={()=> this.archive(this.props.medication.id)} src={require('../images/archive.png')}></img>
+                    {/* <img className="archive" onClick={()=> this.archive(this.props.medication.id)} src={require('../images/archive.png')}></img> */}
                 </div>
                 <div className="description">
                     <p className="underline">Dosage</p>

@@ -125,22 +125,10 @@
       "id": 9
     },
     {
-      "message": "Realized I forgot to take my Plaquenil yesterday. Have doubled up today.",
-      "userId": 3,
-      "date": "06/20/2018, 8:19:05 PM",
+      "message": "Today I'm feeling very sluggish.",
+      "userId": "3",
+      "date": "06/27/2018, 9:50:49 PM",
       "id": 10
-    },
-    {
-      "message": "Today I have a bad headache.",
-      "userId": 3,
-      "date": "06/21/2018, 9:17:59 AM",
-      "id": 11
-    },
-    {
-      "message": "",
-      "userId": 3,
-      "date": "06/21/2018, 5:43:52 PM",
-      "id": 12
     }
   ],
   "doctors": [

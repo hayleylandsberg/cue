@@ -64,6 +64,10 @@ export default class NavBar extends Component {
             })
     }
 
+    exportPage = () => {
+        window.print()
+    }
+
     render() {
         return (
             <nav className="navbar navbar-light fixed-top white flex-md-nowrap p-0 shadow">
@@ -90,12 +94,13 @@ export default class NavBar extends Component {
                 </ul>
                 <ul className="navbar-nav px-3">
                     <li className="nav-item text-nowrap">
-                        <a className="nav-link" id="nav__export"
-                            /* onClick={this.props.viewHandler}*/ href="#">
+                        {/* <a className="nav-link" id="nav__export"
+                            onClick={this.props.viewHandler} href="#">
                             <img id="navimg__export"
-                                 onClick={()=>$("#").slideToggle(333)}
+                                 title="print" onClick={this.exportPage}
                                  src={exportpic} style={{ height: `30px` }} />
-                        </a>
+                        </a> */}
+                        <div className="nav-link"><img src={exportpic}></img><a title="print" id={`nav__print__${localStorage.getItem("yakId")}`} onClick={this.props.viewHandler} href="#"></a></div>
                     </li>
                 </ul>
                 <ul className="navbar-nav px-3">

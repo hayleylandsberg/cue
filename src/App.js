@@ -11,7 +11,7 @@ import Register from "./auth/Register"
 import RegModal from "./auth/RegModal"
 import MyDoctors from "./MyDoctors/MyDoctors";
 import MyCabinet from "./MyCabinet/MyCabinet";
-
+import Print from "./print/Print"
 
 class App extends Component {
 
@@ -23,6 +23,7 @@ class App extends Component {
         userProfile: localStorage.getItem("yakId"),
         viewProps: {},
         medications: [],
+        posts: [],
         doctors: [],
         appointments: [],
         viewProps: {
@@ -55,8 +56,6 @@ class App extends Component {
         })
         return Promise.all(falseMeds)
     }
-
-    
 
     displayAllMedications = function () {
         fetch(`http://localhost:5001/medications?&userId=${this.state.activeUser}&_sort=id&_order=desc&_expand=user`)
@@ -145,16 +144,18 @@ class App extends Component {
                 case "results":
                     return <SearchResults terms={this.state.searchTerms} showView={this.showView} {...this.state.viewProps}/>
                 case "profile":
-                    return <Profile user={this.state.userProfile} activeUser={this.state.activeUser}/>
+                    return <Profile user={this.state.userProfile} activeUser={this.state.activeUser} posts={this.state.posts}/>
                 case "medicine-cabinet":
                     return <MyCabinet user={this.state.userProfile} activeUser={this.state.activeUser} displayAllMedications={this.displayAllMedications} medications={this.state.medications} resetMeds={this.resetMeds} showView = {this.showView} 
                     key={this.state.viewProps.randomizer}
                      />
                 case "doctors":
                     return <MyDoctors user={this.state.userProfile} activeUser={this.state.activeUser} displayAllDoctors={this.displayAllDoctors} doctors={this.state.doctors} displayAllAppointments={this.displayAllAppointments} appointments={this.state.appointments}/>
+                case "print":
+                    return <Print user={this.state.userProfile} activeUser={this.state.activeUser} displayAllDoctors={this.displayAllDoctors} doctors={this.state.doctors} displayAllAppointments={this.displayAllAppointments} appointments={this.state.appointments} posts={this.state.posts} displayAllMedications={this.displayAllMedications} medications={this.state.medications}/>
                 case "home":
                 default:
-                    return <Home activeUser={this.state.activeUser} />
+                    return <Home activeUser={this.state.activeUser} appointments={this.state.appointments} displayAllAppointments={this.displayAllAppointments} />
             }
         }
     }

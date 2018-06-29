@@ -90,34 +90,6 @@
       "appointmentDate": "2018-06-22",
       "doctorId": 8,
       "id": 5
-    },
-    {
-      "userId": 3,
-      "appointmentTime": "",
-      "appointmentDate": "",
-      "doctorId": 8,
-      "id": 6
-    },
-    {
-      "userId": 3,
-      "appointmentTime": "",
-      "appointmentDate": "",
-      "doctorId": 8,
-      "id": 7
-    },
-    {
-      "userId": 3,
-      "appointmentTime": "",
-      "appointmentDate": "",
-      "doctorId": 8,
-      "id": 8
-    },
-    {
-      "userId": 3,
-      "appointmentTime": "",
-      "appointmentDate": "",
-      "doctorId": 8,
-      "id": 9
     }
   ],
   "posts": [

@@ -48,7 +48,12 @@ export default class AddAppointment extends Component {
                 userId: parseInt(this.activeUser),
                 appointmentTime: this.state.appointmentTime,
                 appointmentDate: this.state.appointmentDate,
-                doctorId: this.props.doctor.id
+                doctorId: this.props.doctor.id,
+                doctorName: this.props.doctor.name,
+                doctorSpecialty: this.props.doctor.specialty,
+                doctorFacility: this.props.doctor.facility,
+                doctorAddress: this.props.doctor.address,
+                doctorPhone: this.props.doctor.phoneNumber
             })
         })
 
@@ -66,7 +71,7 @@ export default class AddAppointment extends Component {
             <h1 className="h3 mb-3 font-weight-normal">Add an Appointment</h1>
             <div className="flexForm-Doctor">
             <label htmlFor="inputDoctor" className="sr-only">Appointment Date</label>
-            <input onChange={this.handleFieldChange} type="date" id="appointmentDate" className="form-control" placeholder="Appointment Date" required="" autoFocus="" />
+            <input onChange={this.handleFieldChange} type="date" format="mm-dd-yyyy" id="appointmentDate" className="form-control" placeholder="Appointment Date" required="" autoFocus="" />
             <label htmlFor="inputappointmentDate" className="sr-only">Appointment Time</label>
 
             <input onChange={this.handleFieldChange} type="time" id="appointmentTime" className="form-control" placeholder="Appointment Time" required="" autoFocus="" />

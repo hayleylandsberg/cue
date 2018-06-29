@@ -5,6 +5,7 @@ import PostList from "./PostList";
 import MedicationList from "../medication/MedicationList";
 import PersonalList from "../sideNav/PersonalList";
 import DoctorList from "../doctors/DoctorList"
+import AppointmentList from "../appointment/AppointmentList"
 
 export default class Home extends Component {
 
@@ -12,7 +13,8 @@ export default class Home extends Component {
         message: "",
         posts: [],
         medications: [],
-        doctors: []
+        doctors: [],
+        appointments: []
     }
 
     postMessage = (text) => fetch("http://localhost:5001/posts", {
@@ -77,17 +79,22 @@ render() {
                     <div className="newsfeed">
                         <form>
                             <div className="form-group">
-                                <label htmlForm="message"><h5>How are you feeling today?</h5></label>
+                                <label htmlForm="message"><h4>How are you feeling today?</h4></label>
+                                <div id="message-flex">
                                 <textarea id="message"
                                           value={this.state.message}
                                           onChange={this.handleFieldChange}
                                           className="form-control"
                                           rows="4"></textarea>
+                            <button type="button" onClick={this.postMessage} className="btn btn-info btn-lg" id="log">Log</button>
                             </div>
-                            <button type="button" onClick={this.postMessage} className="btn btn-info btn-lg">Log</button>
+                            </div>
                         </form>
-
+                        
                         <PostList posts={this.state.posts} activeUser={this.props.activeUser} />
+                    </div>
+                    <div>
+                    <AppointmentList activeUser={this.props.activeUser} appointments={this.props.appointments} displayAllAppointments={this.props.displayAllAppointments}/>
                     </div>
                 </div>
                 <div className="med-doc-list col col-sm-3">

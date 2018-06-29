@@ -1,42 +1,6 @@
-// import React, { Component } from "react"
-// import "./Home.css"
-// import $ from "jquery"
-// ;
-
-// export default class Archive extends Component {
-
-//     state = {
-//         message: "",
-//         posts: [],
-//         medications: [],
-//         doctors: []
-//     }
-// postMessage = (text) => fetch(`http://localhost:5001/posts/${id}`, {
-//         method: "PUT",
-//         headers: {
-//             "Content-Type": "application/json"
-//         },
-//         body: JSON.stringify({
-//             message: this.state.message,
-//             userId: this.props.activeUser,
-//             date: new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(Date.now())
-//         })
-//     })
-//     .then(() => {
-//         return fetch(`http://localhost:5001/posts?&userId=${this.props.activeUser}&_sort=id&_order=desc&_expand=user`)
-//     })
-//     .then(r => r.json())
-//     .then(posts => {
-//         this.setState({
-//             message: "",
-//             posts: posts
-//         })
-//     })
-// }
-
 import React, { Component } from "react"
 import swal from 'sweetalert'
-import "./PostList.css"
+import "./DiaryList.css"
 
 const customStyles = {
     content : {
@@ -50,7 +14,7 @@ const customStyles = {
   }
 
 
-export default class EditPost extends Component {
+export default class EditDiary extends Component {
 
     state={
         message: ""
@@ -73,14 +37,14 @@ export default class EditPost extends Component {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                message: this.setState.message
+                message: this.state.message
             })
         })
         // Set local storage with newly created user's id and show home view
         .then(newUser => {
             this.props.onRequestClose()
             console.log(postId)
-            // this.props.displayAllAppointments()
+            this.props.displayAllPosts()
             swal("Success!", "Your diary entry has been updated.", "success")
         })
         // .then(() => {

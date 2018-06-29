@@ -28,12 +28,13 @@ export default class Appointments extends Component {
                 <img className="delete" src={require('../images/close.png')}onClick={()=> this.deleteAppointment(this.props.appointments.id)}></img>
             </div>
                 <div id="contact-calendar">
-                    {/* <div className="contact-md">
-                        <p>{this.props.doctor.specialty}</p>
-                        <p>{this.props.doctor.facility}</p>
-                        <p>{this.props.doctor.address}</p>
-                        <p>{this.props.doctor.phoneNumber}</p>
-                    </div> */}
+                    <div className="contact-md">
+                        <p>{this.props.appointments.doctorName}</p>
+                        <p>{this.props.appointments.doctorSpecialty}</p>
+                        <p>{this.props.appointments.doctorFacility}</p>
+                        <p>{this.props.appointments.doctorAddress}</p>
+                        <p>{this.props.appointments.doctorPhone}</p>
+                    </div>
                 </div>
             </div>
         )

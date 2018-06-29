@@ -64,6 +64,10 @@ export default class NavBar extends Component {
             })
     }
 
+    exportPage = () => {
+        window.print()
+    }
+
     render() {
         return (
             <nav className="navbar navbar-light fixed-top white flex-md-nowrap p-0 shadow">
@@ -90,12 +94,13 @@ export default class NavBar extends Component {
                 </ul>
                 <ul className="navbar-nav px-3">
                     <li className="nav-item text-nowrap">
-                        <a className="nav-link" id="nav__export"
-                            /* onClick={this.props.viewHandler}*/ href="#">
+                        {/* <a className="nav-link" id="nav__export"
+                            onClick={this.props.viewHandler} href="#">
                             <img id="navimg__export"
-                                 onClick={()=>$("#").slideToggle(333)}
+                                 title="print" onClick={this.exportPage}
                                  src={exportpic} style={{ height: `30px` }} />
-                        </a>
+                        </a> */}
+                        <div className="nav-link"><img src={exportpic}></img><a title="print" id={`nav__print__${localStorage.getItem("yakId")}`} onClick={this.props.viewHandler} href="#"></a></div>
                     </li>
                 </ul>
                 <ul className="navbar-nav px-3">
@@ -108,7 +113,7 @@ export default class NavBar extends Component {
                         <div className="menu-option"><img src={diary}></img><a title="diary" id={`nav__profile__${localStorage.getItem("yakId")}`} onClick={this.props.viewHandler} href="#"> My Diary</a></div>
                         <div className="menu-option"><img src={medicineCabinet}></img><a title="medicine-cabinet" id={`nav__medicine-cabinet__${localStorage.getItem("yakId")}`} onClick={this.props.viewHandler} href="#"> My Medicine Cabinet</a>
                         </div>
-                        <div className="menu-option"><img src={doctor}></img><a title="doctor" id={`nav__doctors__${localStorage.getItem("yakId")}`} onClick={this.props.viewHandler} href="#"> My Doctors</a></div>
+                        <div className="menu-option"><img src={doctor}></img><a title="doctor" id={`nav__doctors__${localStorage.getItem("yakId")}`} onClick={this.props.viewHandler} href="#"> My Doctors & Appts</a></div>
                     </section>
                 </article>
             </nav>

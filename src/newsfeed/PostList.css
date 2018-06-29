@@ -1,9 +1,14 @@
 .postList {
-    margin-top: 3em;
+    margin-top: 0px;
 }
 
 #diaryList {
     overflow: auto; 
     max-width: 871px; 
-    height: 470px;
+    /* height: 470px; old height*/
+    height: 280px;
+}
+
+#post-input {
+    width: 400px;
 }

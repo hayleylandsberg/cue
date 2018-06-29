@@ -34,7 +34,7 @@ export default class MyDoctors extends Component {
                 <h3 className="appointment-heading-md">Your Appointments</h3>
                 <div id="listOfAppointments-md">
                 {
-                    this.props.appointments.slice(0).reverse().map(appointment => <Appointments key={appointment.id} appointments={appointment} displayAllAppointments={this.props.displayAllAppointments} />)
+                    this.props.appointments.slice(0).reverse().map(appointment => <Appointments key={appointment.id} appointments={appointment} displayAllAppointments={this.props.displayAllAppointments} doctors={this.state.doctors}/>)
                 }
                 </div>
                 </div>

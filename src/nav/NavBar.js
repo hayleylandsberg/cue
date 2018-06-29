@@ -108,7 +108,7 @@ export default class NavBar extends Component {
                         <div className="menu-option"><img src={diary}></img><a title="diary" id={`nav__profile__${localStorage.getItem("yakId")}`} onClick={this.props.viewHandler} href="#"> My Diary</a></div>
                         <div className="menu-option"><img src={medicineCabinet}></img><a title="medicine-cabinet" id={`nav__medicine-cabinet__${localStorage.getItem("yakId")}`} onClick={this.props.viewHandler} href="#"> My Medicine Cabinet</a>
                         </div>
-                        <div className="menu-option"><img src={doctor}></img><a title="doctor" id={`nav__doctors__${localStorage.getItem("yakId")}`} onClick={this.props.viewHandler} href="#"> My Doctors</a></div>
+                        <div className="menu-option"><img src={doctor}></img><a title="doctor" id={`nav__doctors__${localStorage.getItem("yakId")}`} onClick={this.props.viewHandler} href="#"> My Doctors & Appts</a></div>
                     </section>
                 </article>
             </nav>

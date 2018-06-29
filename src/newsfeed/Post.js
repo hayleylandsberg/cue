@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import "./Post.css"
-
+import RegModalPost from "./RegModalPost"
 
 /**
  * TODOs:

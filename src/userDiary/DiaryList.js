@@ -14,7 +14,7 @@ export default class DiaryList extends Component {
                 <h1 className="postList__header">Diary Entries</h1>
                 <div id="diaryList-profile">
                 {
-                    this.props.posts.map(p => <Diary key={p.id} post={p} />)
+                    this.props.posts.map(p => <Diary key={p.id} post={p} displayAllPosts={this.props.displayAllPosts}/>)
                 }
                 </div>
             </div>

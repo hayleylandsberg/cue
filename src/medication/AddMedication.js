@@ -67,7 +67,7 @@ export default class AddMedication extends Component {
             <h1 className="h3 mb-3 font-weight-normal">Add a Medication</h1>
             <div className="flexForm-Medication">
             <label htmlFor="inputMedication" className="sr-only">Medication Name</label>
-            <input onChange={this.handleFieldChange} type="name" id="name" className="form-control" placeholder="Medication's Name" required="" autoFocus="" />
+            <input onChange={this.handleFieldChange} type="name" id="name" className="form-control" placeholder="Medication's Name" required autoFocus="" />
             <label htmlFor="inputDosage" className="sr-only">Dosage</label>
             <input onChange={this.handleFieldChange} type="dosage" id="dosage" className="form-control" placeholder="Dosage" required="" />
             <label htmlFor="inputFrequency" className="sr-only">Frequency</label>

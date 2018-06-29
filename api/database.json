@@ -65,15 +65,39 @@
     },
     {
       "userId": 3,
-      "appointmentTime": "10:00",
-      "appointmentDate": "2018-07-19",
+      "appointmentTime": "13:20",
+      "appointmentDate": "2018-07-20",
+      "doctorId": 8,
+      "doctorName": "Dr. Erin Scholl",
+      "doctorSpecialty": "Rheumatology",
+      "doctorFacility": "Vanderbilt Medical Center",
+      "doctorAddress": "100 Medical Plaza Nashville, TN 37212",
+      "doctorPhone": "615-332-5473",
+      "id": 2
+    },
+    {
+      "userId": 3,
+      "appointmentTime": "15:00",
+      "appointmentDate": "2018-07-31",
       "doctorId": 9,
       "doctorName": "Dr. Frank Berry",
       "doctorSpecialty": "Internal Medicine",
       "doctorFacility": "Vanderbilt Medical Center",
       "doctorAddress": "100 Medical Plaza Nashville, TN 37212",
       "doctorPhone": "615-332-9282",
-      "id": 2
+      "id": 3
+    },
+    {
+      "userId": 3,
+      "appointmentTime": "14:30",
+      "appointmentDate": "2018-10-02",
+      "doctorId": 8,
+      "doctorName": "Dr. Erin Scholl",
+      "doctorSpecialty": "Rheumatology",
+      "doctorFacility": "Vanderbilt Medical Center",
+      "doctorAddress": "100 Medical Plaza Nashville, TN 37212",
+      "doctorPhone": "615-332-5473",
+      "id": 4
     }
   ],
   "posts": [
@@ -138,9 +162,9 @@
       "id": 10
     },
     {
-      "message": "",
-      "userId": 3,
-      "date": "06/21/2018, 9:17:59 AM",
+      "message": "Today I had a bad headache all day and numbness in my right hand.",
+      "userId": "3",
+      "date": "06/28/2018, 11:50:04 PM",
       "id": 11
     }
   ],
@@ -327,6 +351,16 @@
       "archive": false,
       "takenMeds": false,
       "id": 11
+    },
+    {
+      "name": "Vitamin D3",
+      "dosage": "2000iu",
+      "frequency": "1x Daily",
+      "rxNumber": "432423",
+      "userId": 3,
+      "archive": false,
+      "takenMeds": false,
+      "id": 12
     }
   ]
 }

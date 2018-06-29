@@ -19,12 +19,24 @@ export default class Appointments extends Component {
         })
     }
 
+    hours = (time) => {
+        let hours = time[0] + time[1];
+        let min = time[3] + time[4];
+        if (hours < 12) {
+            return hours + ':' + min + ' AM';
+        } else {
+            hours=hours - 12;
+            hours=(hours.length < 10) ? '0'+hours:hours;
+            return hours+ ':' + min + ' PM';
+        }
+    }
+
     render() {
         return (
             <div className="appointment-md">
             <div className="doctor-calendar-md">
                 <h5>{this.props.appointments.appointmentDate}</h5>
-                <h5>{this.props.appointments.appointmentTime}</h5>
+                <h5>{this.hours(this.props.appointments.appointmentTime)}</h5>
                 <img className="delete" src={require('../images/close.png')}onClick={()=> this.deleteAppointment(this.props.appointments.id)}></img>
             </div>
                 <div id="contact-calendar">

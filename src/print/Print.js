@@ -1,6 +1,9 @@
 import React, { Component } from "react"
 import "./Print.css"
-
+import PrintApptList from "./PrintApptList"
+import PrintDocsList from "./PrintDocsList"
+import PrintMedsList from "./PrintMedsList"
+import PrintDiaryList from "./PrintDiaryList"
 
 export default class Print extends Component {
 
@@ -9,7 +12,8 @@ export default class Print extends Component {
         medications: [],
         posts: [],
         doctors: [],
-        appointments: []
+        appointments: [],
+        posts: []
     }
 
     displayUserInfo = () => {
@@ -31,12 +35,15 @@ export default class Print extends Component {
         this.props.displayAllAppointments()
         this.props.displayAllDoctors()
         this.displayUserInfo()
+        this.props.displayAllPosts()
     }
 
     render() {
         return (
             <div>
-                <input type="button" id="print-button" className="btn btn-danger btn-lg" onClick={()=> window.print()} value="Print"/>
+                <div id="print-button">
+                <input type="button" className="btn btn-danger btn-lg print-btn" onClick={()=> window.print()} value="Print"/>
+                </div>
                 <div id="pi-heading">
                 <h3>Personal Information</h3>
             <div className="first-component">
@@ -58,12 +65,51 @@ export default class Print extends Component {
                     <p className="bold-personal">Emergency Contact Number:</p><p>{this.state.users.emergencyNumber}</p>
                 </div>
                 </div>
-                <div id="printMedications">
+                <div id="printAppointments">
                     <div className="print-heading">
                         <h3>Appointments</h3>
                     </div>
+                    <div id="listOfAppointments-print">
+                        {
+                    this.props.appointments.slice(0).reverse().map(appointment => <PrintApptList key={appointment.id} appointment={appointment} displayAllAppointments={this.props.displayAllAppointments} appointments={this.props.appointments}/>)
+                    }
+                    </div>
+                </div>
+                <div id="printDoctors">
+                    <div className="print-heading">
+                        <h3>Doctors</h3>
+                    </div>
                     <div>
-                        <p>{this.props.appointments.appointmentTime}</p>
+                    <div id="listOfDoctors-print">
+                    {
+                    this.props.doctors.slice(0).reverse().map(doctor => <PrintDocsList key={doctor.id} doctor={doctor} />)
+                    }
+                </div>
+                    </div>
+                </div>
+                <div id="printMedications">
+                    <div className="print-heading">
+                        <h3>Medications</h3>
+                    </div>
+                    <div>
+                    <div id="listOfMedications-print">
+                {
+                    this.props.medications.slice(0).reverse().filter(m => m.archive === false).map(medication => <PrintMedsList key={medication.id} medication={medication} displayAllMedications={this.props.displayAllMedications}/>)
+
+                }
+                </div>
+                    </div>
+                </div>
+                <div id="printDiary">
+                    <div className="print-heading">
+                        <h3>Diary Entries</h3>
+                    </div>
+                    <div>
+                    <div id="diaryList-print">
+                     {
+                    this.props.posts.map(p => <PrintDiaryList key={p.id} post={p} />)
+                        }
+                    </div>
                     </div>
                 </div>
             </div>

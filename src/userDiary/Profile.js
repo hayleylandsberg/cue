@@ -70,7 +70,7 @@ render() {
                                           className="form-control"
                                           rows="4"></textarea>
                             </div>
-                            <button type="button" onClick={this.postMessage} className="btn btn-info btn-lg">Log</button>
+                            <button type="button" onClick={this.postMessage} className="btn btn-info btn-lg btn-danger">Log</button>
                         </form>
 
                         <DiaryList posts={this.state.posts} activeUser={this.props.activeUser} displayAllPosts={this.displayAllPosts}/>

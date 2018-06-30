@@ -86,7 +86,7 @@ render() {
                                           onChange={this.handleFieldChange}
                                           className="form-control"
                                           rows="4"></textarea>
-                            <button type="button" onClick={this.postMessage} className="btn btn-info btn-lg" id="log">Log</button>
+                            <button type="button" onClick={this.postMessage} className="btn btn-info btn-lg btn-danger" id="log">Log</button>
                             </div>
                             </div>
                         </form>

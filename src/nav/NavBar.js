@@ -64,9 +64,6 @@ export default class NavBar extends Component {
             })
     }
 
-    exportPage = () => {
-        window.print()
-    }
 
     render() {
         return (
@@ -100,7 +97,13 @@ export default class NavBar extends Component {
                                  title="print" onClick={this.exportPage}
                                  src={exportpic} style={{ height: `30px` }} />
                         </a> */}
-                        <div className="nav-link"><img src={exportpic}></img><a title="print" id={`nav__print__${localStorage.getItem("yakId")}`} onClick={this.props.viewHandler} href="#"></a></div>
+                        
+                        <a className="nav-link" id={`nav__export__${localStorage.getItem("yakId")}`}
+                            /* onClick={this.props.viewHandler}*/ href="#">
+                            <img id="navimg__export"
+                                 onClick={this.props.viewHandler}
+                                 src={exportpic} style={{ height: `30px` }} />
+                        </a>
                     </li>
                 </ul>
                 <ul className="navbar-nav px-3">

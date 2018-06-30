@@ -16,11 +16,18 @@ export default class AppointmentsDash extends Component {
         }
     }
 
+    date = (date) => {
+        let month = date[5] + date[6];
+        let day = date[8] + date[9];
+        let year = date[0] + date[1] + date[2] + date[3];
+        return month + "/" + day + "/" + year;
+    }
+
     render() {
         return (
             <div className="appointment-dash">
             <div className="doctor-calendar-dash">
-                <h6>{this.props.appointment.appointmentDate}</h6>
+                <h6>{this.date(this.props.appointment.appointmentDate)}</h6>
                 <h6>{this.hours(this.props.appointment.appointmentTime)}</h6>
             </div>
                 <div id="contact-calendar-dash">

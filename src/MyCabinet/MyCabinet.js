@@ -20,6 +20,7 @@ export default class MyCabinet extends Component {
             <div>
                 <PersonalList activeUser={this.props.activeUser} />
             <div className="medication-mc">
+                {/* <h4>Daily Streak Score: {this.props.user.score} </h4> */}
                 <div id="medicine-heading-mc">
                 <h1>Medicine Cabinet</h1>
                 <RegModal showView={this.props.showView} setActiveUser={this.props.setActiveUser} displayAllMedications={this.props.displayAllMedications}/>

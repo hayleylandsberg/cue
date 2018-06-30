@@ -166,6 +166,18 @@
       "userId": "3",
       "date": "06/28/2018, 11:50:04 PM",
       "id": 11
+    },
+    {
+      "message": "Took Vitamin B12 yesterday and I'm feeling better. Think I might try and add this to my medicine cabinet.",
+      "userId": "3",
+      "date": "06/29/2018, 1:24:35 PM",
+      "id": 12
+    },
+    {
+      "message": "",
+      "userId": "3",
+      "date": "06/29/2018, 7:45:59 PM",
+      "id": 13
     }
   ],
   "doctors": [
@@ -361,6 +373,16 @@
       "archive": false,
       "takenMeds": false,
       "id": 12
+    },
+    {
+      "name": "Vitamin B12",
+      "dosage": "100mg",
+      "frequency": "1x Daily",
+      "rxNumber": "324342",
+      "userId": 3,
+      "archive": true,
+      "takenMeds": false,
+      "id": 13
     }
   ]
 }

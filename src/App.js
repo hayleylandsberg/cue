@@ -151,7 +151,7 @@ class App extends Component {
                      />
                 case "doctors":
                     return <MyDoctors user={this.state.userProfile} activeUser={this.state.activeUser} displayAllDoctors={this.displayAllDoctors} doctors={this.state.doctors} displayAllAppointments={this.displayAllAppointments} appointments={this.state.appointments}/>
-                case "print":
+                case "export":
                     return <Print user={this.state.userProfile} activeUser={this.state.activeUser} displayAllDoctors={this.displayAllDoctors} doctors={this.state.doctors} displayAllAppointments={this.displayAllAppointments} appointments={this.state.appointments} posts={this.state.posts} displayAllMedications={this.displayAllMedications} medications={this.state.medications}/>
                 case "home":
                 default:

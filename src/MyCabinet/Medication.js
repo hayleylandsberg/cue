@@ -22,7 +22,6 @@ export default class Medication extends Component {
         })
     }
 
-
     areMedsTaken = () => {
         fetch(`http://localhost:5001/medications?&userId=${this.props.activeUser}&takenMeds=false&archive=false`)
             .then(r => r.json())
@@ -30,7 +29,8 @@ export default class Medication extends Component {
                     if (medications.length > 0) {
                         console.log("Still need to take all of your medications")
                     } else {
-                        swal("Congrats!", "You have taken all your medications today! 10 points will be added to your daily streak score.", "success")
+                        swal("Congrats!", "You have taken all your medications today!", "success")
+                        //increase score//
                         this.props.resetMeds().then(() => {
                             this.props.displayAllMedications()
                         }).then(() => {

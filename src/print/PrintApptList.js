@@ -1,8 +1,8 @@
 import React, { Component } from "react"
-import "./Appointments.css"
+import "./Print.css"
 
 
-export default class AppointmentsDash extends Component {
+export default class PrintApptList extends Component {
 
     hours = (time) => {
         let hours = time[0] + time[1];
@@ -25,7 +25,7 @@ export default class AppointmentsDash extends Component {
 
     render() {
         return (
-            <div className="appointment-dash">
+            <div className="appt-print">
             <div className="doctor-calendar-dash">
                 <h6>{this.date(this.props.appointment.appointmentDate)}</h6>
                 <h6>{this.hours(this.props.appointment.appointmentTime)}</h6>

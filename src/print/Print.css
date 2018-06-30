@@ -1,0 +1,98 @@
+#print-button {
+    margin-top: 80px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+}
+
+.print-btn {
+    width: 140px;
+    height: 70px;
+}
+
+#pi-heading {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.first-component {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: white;
+    border: 1px solid black;
+    width: 60%;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 20px;
+}
+
+.bold-personal {
+    font-weight: bold;
+    line-height: 10px;
+}
+
+.print-heading {
+    margin-top: 30px;
+}
+
+#listOfAppointments-print {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.appt-print {
+    width: 250px;
+    background-color: white;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+#listOfDoctors-print {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.doctor-print {
+    background-color: white;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+#listOfMedications-print {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.medicine-print {
+    background-color: white;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+}
+
+.heading-meds-print {
+    text-align: center;
+}
+
+.card-print {
+    width: 800px;
+    background-color: white;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+#diaryList-print {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

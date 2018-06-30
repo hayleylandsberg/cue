@@ -57,6 +57,12 @@ class App extends Component {
         return Promise.all(falseMeds)
     }
 
+    displayAllPosts = function () {
+        fetch(`http://localhost:5001/posts?&userId=${this.state.activeUser}&_sort=id&_order=desc&_expand=user`)
+            .then(r => r.json())
+            .then(post => this.setState({posts: post}))
+    }.bind(this)
+
     displayAllMedications = function () {
         fetch(`http://localhost:5001/medications?&userId=${this.state.activeUser}&_sort=id&_order=desc&_expand=user`)
             .then(r => r.json())
@@ -151,8 +157,8 @@ class App extends Component {
                      />
                 case "doctors":
                     return <MyDoctors user={this.state.userProfile} activeUser={this.state.activeUser} displayAllDoctors={this.displayAllDoctors} doctors={this.state.doctors} displayAllAppointments={this.displayAllAppointments} appointments={this.state.appointments}/>
-                case "print":
-                    return <Print user={this.state.userProfile} activeUser={this.state.activeUser} displayAllDoctors={this.displayAllDoctors} doctors={this.state.doctors} displayAllAppointments={this.displayAllAppointments} appointments={this.state.appointments} posts={this.state.posts} displayAllMedications={this.displayAllMedications} medications={this.state.medications}/>
+                case "export":
+                    return <Print user={this.state.userProfile} activeUser={this.state.activeUser} displayAllDoctors={this.displayAllDoctors} doctors={this.state.doctors} displayAllAppointments={this.displayAllAppointments} appointments={this.state.appointments} posts={this.state.posts} displayAllMedications={this.displayAllMedications} medications={this.state.medications} displayAllPosts={this.displayAllPosts} />
                 case "home":
                 default:
                     return <Home activeUser={this.state.activeUser} appointments={this.state.appointments} displayAllAppointments={this.displayAllAppointments} />

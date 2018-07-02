@@ -27,29 +27,29 @@ export default class SearchResults extends Component {
                     this.props.foundItems.posts.map(p =>
                         <div className="card post" key={p.id}>
                             <div className="card-body">
-                                <h5 className="card-title">By {p.user.name}</h5>
+                                <h5 className="card-title">By {p.date}</h5>
                                 <p className="card-text">
                                     {p.message}
                                 </p>
-                                <a href="#" className="btn btn-outline-success">Like</a>
+                                {/* <a href="#" className="btn btn-outline-success">Like</a> */}
                             </div>
                         </div>
                     )
                 }
 
-                {
-                    this.props.foundItems.users.map(u =>
-                        <div className="card post" key={u.id}>
+                {/* {
+                    this.props.foundItems.medications.map(m =>
+                        <div className="card post" key={m.id}>
                             <img className="card-img-top avatar" src={Avatar} alt="Generic person image" />
                             <div className="card-body">
-                                <h5 className="card-title">{u.name}</h5>
+                                <h5 className="card-title">{m.name}</h5>
                                 <a href="#" onClick={this.showProfile}
-                                   id={`user--${u.id}`}
+                                   id={`medications--${m.id}`}
                                    className="btn btn-outline-success">View profile</a>
                             </div>
                         </div>
                     )
-                }
+                } */}
             </div>
         )
     }

@@ -14,6 +14,25 @@ export default class SearchResults extends Component {
         medications: []
     }
 
+    hours = (time) => {
+        let hours = time[0] + time[1];
+        let min = time[3] + time[4];
+        if (hours < 12) {
+            return hours + ':' + min + ' AM';
+        } else {
+            hours=hours - 12;
+            hours=(hours.length < 10) ? '0'+hours:hours;
+            return hours+ ':' + min + ' PM';
+        }
+    }
+
+    date = (date) => {
+        let month = date[5] + date[6];
+        let day = date[8] + date[9];
+        let year = date[0] + date[1] + date[2] + date[3];
+        return month + "/" + day + "/" + year;
+    }
+
     showProfile = (e) => {
         const id = e.target.id.split("--")[1]
         this.props.showView("profile", {userId: id})
@@ -23,33 +42,79 @@ export default class SearchResults extends Component {
         return (
             <div className="searchResults">
                 <h1>Search Results</h1>
+                <div id="columns">
+            <div id="firstColumn">
+                <h3 className="search-heading">Diary Entries</h3>
                 {
                     this.props.foundItems.posts.map(p =>
                         <div className="card post" key={p.id}>
                             <div className="card-body">
-                                <h5 className="card-title">By {p.user.name}</h5>
+                                <h5 className="card-title">By {p.date}</h5>
                                 <p className="card-text">
                                     {p.message}
                                 </p>
-                                <a href="#" className="btn btn-outline-success">Like</a>
+                                {/* <a href="#" className="btn btn-outline-success">Like</a> */}
                             </div>
                         </div>
                     )
                 }
-
+                <h3 className="search-heading">Medications</h3>
                 {
-                    this.props.foundItems.users.map(u =>
-                        <div className="card post" key={u.id}>
-                            <img className="card-img-top avatar" src={Avatar} alt="Generic person image" />
+                    this.props.foundItems.medications.map(m =>
+                        <div className="card post" key={m.id}>
                             <div className="card-body">
-                                <h5 className="card-title">{u.name}</h5>
-                                <a href="#" onClick={this.showProfile}
-                                   id={`user--${u.id}`}
-                                   className="btn btn-outline-success">View profile</a>
+                                <h5 className="card-title">{m.name}</h5>
+                                <div className="card-med-descriptions">
+                                <p>Dosage</p>
+                                <p>Frequency</p>
+                                <p>Rx Number</p>
+                                </div>
+                                <div className="card-information-search">
+                                <p>{m.dosage}</p>
+                                <p>{m.frequency}</p>
+                                <p>{m.rxNumber}</p>
+                                </div>
                             </div>
                         </div>
                     )
                 }
+                </div>
+                <div id="secondColumn">
+                <h3 className="search-heading">Appointments</h3>
+                {
+                    this.props.foundItems.appointments.map(a =>
+                        <div className="card post" key={a.id}>
+                            <div className="card-body">
+                                <h5 className="card-title">{this.date(a.appointmentDate)}</h5>
+                                <h6>{this.hours(a.appointmentTime)}</h6>
+                                <div className="">
+                                <p>{a.doctorSpecialty}</p>
+                                <p>{a.doctorFacility}</p>
+                                <p>{a.doctorAddress}</p>
+                                <p>{a.doctorPhone}</p>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                }
+                <h3 className="search-heading">Doctors</h3>
+                {
+                    this.props.foundItems.doctors.map(d =>
+                        <div className="card post" key={d.id}>
+                            <div className="card-body">
+                                <h5 className="card-title">{d.name}</h5>
+                                <div className="">
+                                <p>{d.specialty}</p>
+                                <p>{d.facility}</p>
+                                <p>{d.address}</p>
+                                <p>{d.phoneNumber}</p>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                }
+                </div>
+                </div>
             </div>
         )
     }

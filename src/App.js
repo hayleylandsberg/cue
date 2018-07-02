@@ -173,6 +173,7 @@ class App extends Component {
                     searchHandler={this.performSearch}
                     activeUser={this.state.activeUser}
                     setActiveUser={this.setActiveUser}
+                    showView={this.showView}
                 />
 
                 {this.View()}

@@ -7,13 +7,14 @@ import exportpic from "../images/export.png"
 import medicineCabinet from "../images/medicine-box-dark.png"
 import doctor from "../images/doctor-dark.png"
 import diary from "../images/diary-dark.png"
-
+import Search from "../search/Search"
 
 export default class NavBar extends Component {
 
     // Set initial state
     state = {
-        searchTerms: ""
+        searchTerms: "",
+        activeUser: localStorage.getItem("yakId")
     }
 
     /**
@@ -22,8 +23,12 @@ export default class NavBar extends Component {
      */
     search = (e) => {
         if (e.charCode === 13) {
-            this.props.searchHandler(this.state.searchTerms)
-            this.setState({ searchTerms: "" })
+            Search.getResults(this.state.searchTerms)
+            .then(foundItems => {
+                    this.setState({ searchTerms: "" })
+                    this.props.showView("results", foundItems)
+                })
+
         }
     }
 
@@ -43,26 +48,26 @@ export default class NavBar extends Component {
         this.setState(stateToChange)
     }
 
-    doSearch = () => {
-        const newState = {}
-        fetch(`http://localhost:5001/posts?message_like=${encodeURI(this.props.terms)}&userId=${this.props.activeUser}&_expand=user`)
-            .then(r => r.json())
-            .then(posts => {
-                newState.posts = posts
-                return fetch(`http://localhost:5001/medications?q=${encodeURI(this.props.terms)}`)
-            })
+    // doSearch = () => {
+    //     const newState = {}
+    //     fetch(`http://localhost:5001/posts?message_like=${encodeURI(this.props.terms)}&userId=${this.props.activeUser}&_expand=user`)
+    //         .then(r => r.json())
+    //         .then(posts => {
+    //             newState.posts = posts
+    //             return fetch(`http://localhost:5001/medications?q=${encodeURI(this.props.terms)}`)
+    //         })
      
-            .then(r => r.json())
-            .then(medications => {
-                newState.medications = medications
-                return fetch(`http://localhost:5001/doctors?q=${encodeURI(this.props.terms)}&userId=${this.props.activeUser}&_sort=id&_order=desc&_expand=user`)
-            })
-            .then(r => r.json())
-            .then(doctors => {
-                newState.doctors = doctors
-                this.setState(newState)
-            })
-    }
+    //         .then(r => r.json())
+    //         .then(medications => {
+    //             newState.medications = medications
+    //             return fetch(`http://localhost:5001/doctors?q=${encodeURI(this.props.terms)}&userId=${this.props.activeUser}&_sort=id&_order=desc&_expand=user`)
+    //         })
+    //         .then(r => r.json())
+    //         .then(doctors => {
+    //             newState.doctors = doctors
+    //             this.setState(newState)
+    //         })
+    // }
 
 
     render() {
@@ -71,10 +76,11 @@ export default class NavBar extends Component {
                 <a className="navbar-brand col-sm-3 col-md-2 mr-0" onClick={this.props.viewHandler} href="#">
                     <img id="nav__home" src={logo} style={{ height: `50px` }} />
                 </a>
+                
                 <input id="searchTerms"
                     value={this.state.searchTerms}
                     onChange={this.handleFieldChange}
-                    onKeyPress={this.doSearch}
+                    onKeyPress={this.search}
                     className="form-control w-100"
                     type="search"
                     placeholder="Search Your Cue"

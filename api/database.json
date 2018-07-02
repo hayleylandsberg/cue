@@ -16,6 +16,7 @@
       "pharmacyNumber": "615-474-6473",
       "emergencyName": "Anthony Landsberg",
       "emergencyNumber": "310-339-4554",
+      "score": 80,
       "id": 1
     },
     {
@@ -34,6 +35,7 @@
       "pharmacyNumber": "615-474-6473",
       "emergencyName": "Hayley Landsberg",
       "emergencyNumber": "310-882-3105",
+      "score": 40,
       "id": 2
     },
     {
@@ -52,6 +54,7 @@
       "pharmacyNumber": "615-555-9090",
       "emergencyName": "Luke Jones",
       "emergencyNumber": "615-555-3432",
+      "score": 30,
       "id": 3
     }
   ],

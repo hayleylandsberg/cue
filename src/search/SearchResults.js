@@ -23,6 +23,7 @@ export default class SearchResults extends Component {
         return (
             <div className="searchResults">
                 <h1>Search Results</h1>
+                <h3 className="search-heading">Diary Entries</h3>
                 {
                     this.props.foundItems.posts.map(p =>
                         <div className="card post" key={p.id}>
@@ -36,20 +37,26 @@ export default class SearchResults extends Component {
                         </div>
                     )
                 }
-
-                {/* {
+                <h3 className="search-heading">Medications</h3>
+                {
                     this.props.foundItems.medications.map(m =>
                         <div className="card post" key={m.id}>
-                            <img className="card-img-top avatar" src={Avatar} alt="Generic person image" />
                             <div className="card-body">
                                 <h5 className="card-title">{m.name}</h5>
-                                <a href="#" onClick={this.showProfile}
-                                   id={`medications--${m.id}`}
-                                   className="btn btn-outline-success">View profile</a>
+                                <div className="card-med-descriptions">
+                                <p>Dosage</p>
+                                <p>Frequency</p>
+                                <p>Rx Number</p>
+                                </div>
+                                <div className="card-information-search">
+                                <p>{m.dosage}</p>
+                                <p>{m.frequency}</p>
+                                <p>{m.rxNumber}</p>
+                                </div>
                             </div>
                         </div>
                     )
-                } */}
+                }
             </div>
         )
     }

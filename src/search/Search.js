@@ -17,6 +17,18 @@ export default Object.create(null, {
                     foundItems.users = users
                     return { foundItems }
                 })
+.then(
+                fetch(`${Settings.remoteURL}/medications?userId=${activeUser}&name_like=${encodeURI(terms)}&_expand=user`)
+                .then(r => r.json())
+                .then(medications => {
+                    foundItems.medications = medications
+                    return fetch(`${Settings.remoteURL}/users?q=${encodeURI(terms)}`)
+                })
+                .then(r => r.json())
+                .then(users => {
+                    foundItems.users = users
+                    return { foundItems }
+                }))
         }
     }
 })

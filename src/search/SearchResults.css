@@ -14,3 +14,21 @@
     flex-direction: row;
     justify-content: space-around;
 }
+
+.card-med-descriptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: red;
+}
+
+.card-information-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.search-heading {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}

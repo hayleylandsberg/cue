@@ -5,8 +5,8 @@ export default Object.create(null, {
     getResults: {
         value: terms => {
             const foundItems = {}
-
-            return fetch(`${Settings.remoteURL}/posts?message_like=${encodeURI(terms)}&_expand=user`)
+            const activeUser = localStorage.getItem("yakId")
+            return fetch(`${Settings.remoteURL}/posts?userId=${activeUser}&message_like=${encodeURI(terms)}&_expand=user`)
                 .then(r => r.json())
                 .then(posts => {
                     foundItems.posts = posts

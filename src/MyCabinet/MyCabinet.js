@@ -8,11 +8,20 @@ import PersonalList from "../sideNav/PersonalList"
 export default class MyCabinet extends Component {
 
     state = {
-        medications: this.props.medications
+        medications: this.props.medications,
+        users: {}
     }
 
+    getUsers = function() {
+        fetch(`http://localhost:5001/users?id=${this.props.activeUser}`)
+                .then(r => r.json()).then(userData => {
+                    this.setState({users: userData[0]})
+                })
+            }.bind(this)
+            
     componentDidMount () {
         this.props.displayAllMedications()
+        this.getUsers()
     }
 
     render() {
@@ -20,7 +29,7 @@ export default class MyCabinet extends Component {
             <div>
                 <PersonalList activeUser={this.props.activeUser} />
             <div className="medication-mc">
-                {/* <h4>Daily Streak Score: {this.props.user.score} </h4> */}
+                <h4>Daily Streak Score: {this.state.users.score} </h4>
                 <div id="medicine-heading-mc">
                 <h1>Medicine Cabinet</h1>
                 <RegModal showView={this.props.showView} setActiveUser={this.props.setActiveUser} displayAllMedications={this.props.displayAllMedications}/>

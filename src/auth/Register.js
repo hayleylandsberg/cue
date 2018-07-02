@@ -31,7 +31,8 @@ export default class Register extends Component {
         pharmacyNumber: "",
         emergencyName: "",
         emergencyNumber: "",
-        password: ""
+        password: "",
+        score: ""
 
     }
     handleFieldChange = function (evt) {
@@ -62,7 +63,8 @@ export default class Register extends Component {
                 pharmacyName: this.state.pharmacyName,
                 pharmacyNumber: this.state.pharmacyNumber,
                 emergencyName: this.state.emergencyName,
-                emergencyNumber: this.state.emergencyNumber
+                emergencyNumber: this.state.emergencyNumber,
+                score: this.state.score
             })
         })
 

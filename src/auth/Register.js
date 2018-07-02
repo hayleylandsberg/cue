@@ -32,7 +32,7 @@ export default class Register extends Component {
         emergencyName: "",
         emergencyNumber: "",
         password: "",
-        score: ""
+        score: 0
 
     }
     handleFieldChange = function (evt) {

@@ -7,6 +7,10 @@ import swal from 'sweetalert'
 
 export default class Medication extends Component {
 
+    state = {
+        users: {}
+    }
+
     archive = (medicationId) => {
         fetch(`http://localhost:5001/medications/${medicationId}`, {
             method: "PATCH",
@@ -30,11 +34,17 @@ export default class Medication extends Component {
                         console.log("Still need to take all of your medications")
                     } else {
                         swal("Congrats!", "You have taken all your medications today!", "success")
-                        //increase score//
-                        this.props.resetMeds().then(() => {
-                            this.props.displayAllMedications()
-                        }).then(() => {
+                        this.props.updateScore(this.props.activeUser)
+                        .then(()=> {
+                            return this.props.resetMeds()
+                        })
+                        .then(() => {
+                            return this.props.displayAllMedications()
+                        })
+                        .then(() => {
                             this.props.showView("medicine-cabinet", { randomizer: Date.now() })
+                        }).catch((error) => {
+                            console.log(error)
                         })
                     }
                 })

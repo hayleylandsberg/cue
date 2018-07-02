@@ -9,19 +9,40 @@ export default class MyCabinet extends Component {
 
     state = {
         medications: this.props.medications,
-        users: {}
+        score: 0
     }
 
-    getUsers = function() {
+    getUsersScore = function() {
         fetch(`http://localhost:5001/users?id=${this.props.activeUser}`)
                 .then(r => r.json()).then(userData => {
-                    this.setState({users: userData[0]})
+                    this.setState({score: userData[0].score})
                 })
             }.bind(this)
-            
+
     componentDidMount () {
         this.props.displayAllMedications()
-        this.getUsers()
+        this.getUsersScore()
+    }
+
+    
+    updateScore = (userId) => {
+        return new Promise((resolve, reject) => {
+            console.log("Are you working?", this.state.score)
+            // Create user in API
+            this.setState({score: this.state.score + 1}, () => {
+                fetch(`http://localhost:5001/users/${userId}`, {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        score: this.state.score
+                    })
+                }).then(() => {
+                    resolve()
+                })
+            })
+        })
     }
 
     render() {
@@ -29,7 +50,7 @@ export default class MyCabinet extends Component {
             <div>
                 <PersonalList activeUser={this.props.activeUser} />
             <div className="medication-mc">
-                <h4>Daily Streak Score: {this.state.users.score} </h4>
+                <h4>Daily Streak Score: {this.state.score} </h4>
                 <div id="medicine-heading-mc">
                 <h1>Medicine Cabinet</h1>
                 <RegModal showView={this.props.showView} setActiveUser={this.props.setActiveUser} displayAllMedications={this.props.displayAllMedications}/>
@@ -37,7 +58,7 @@ export default class MyCabinet extends Component {
                 </div>
                 <div id="listOfMedications-mc">
                 {
-                    this.props.medications.slice(0).reverse().filter(m => m.archive === false).map(medication => <Medication key={medication.id} medication={medication} displayAllMedications={this.props.displayAllMedications} resetMeds={this.props.resetMeds} activeUser={this.props.activeUser} showView = {this.props.showView} />)
+                    this.props.medications.slice(0).reverse().filter(m => m.archive === false).map(medication => <Medication key={medication.id} medication={medication} displayAllMedications={this.props.displayAllMedications} resetMeds={this.props.resetMeds} activeUser={this.props.activeUser} showView = {this.props.showView} updateScore={this.updateScore} score={this.state.score}/>)
 
                 }
                 </div>

@@ -43,6 +43,7 @@ class App extends Component {
         const falseMeds = []
 
         this.state.medications.forEach(med => {
+            console.log(med)
             falseMeds.push(fetch(`http://localhost:5001/medications/${med.id}`, {
                     method: "PATCH",
                     headers: {

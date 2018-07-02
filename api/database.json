@@ -57,13 +57,6 @@
   ],
   "appointments": [
     {
-      "userId": 1,
-      "appointmentTime": "01:00",
-      "appointmentDate": "2018-06-29",
-      "doctorId": 1,
-      "id": 1
-    },
-    {
       "userId": 3,
       "appointmentTime": "13:20",
       "appointmentDate": "2018-07-20",

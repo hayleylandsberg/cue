@@ -2,7 +2,7 @@
 
 **Cue** is a personal Medical Management application. It is geared towards users with chronic illnesses that need to manage their symptoms and medications. Cue also gives the user tools to better communicate their health issues with their doctors.<br>
 
-Cue was built using React. The JSON database hosted on Heroku and the application is hosted on AWS S3.
+Cue was built using React. The JSON database is hosted on Heroku and the application is hosted on AWS S3.
 <br>
 Demo Cue at http://www.cuemedmgmt.com<br>
 For demo purposes, you can either register a new user (please use a dummy password as it currently prints to the database) or use the following login credentials:
